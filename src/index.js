@@ -3,40 +3,32 @@
 //Mardelys
 
 const btnplay = document.getElementById('#play-ruleta');
-const animacioRuleta = document.getElementById('#animacion-ruleta');
-class ANIMACION{
-   constructor(animacioRuleta){
-   this.canPlay = false;
-}
-}
 
 
 
 function rotacionRuleta(){
    gsap.to('.ruleta', {
-   duration: 1,
-   rotate : '360deg',
+   duration: 2,
+   rotate : '130deg',
    x: 0,
-
+   
 })
 
-}
+};
 
 function rotacionHacha(){
     gsap.to('.hacha',{
-   duration : 1,
+   duration : 0.5,
    rotate : '700deg',
    x: -100,
    y: -350,
+   transition: -6,
    scale: 0.5,
+   ease: Back.easeIn,
 })
-}
-   
+};
    
 
-btnplay.addEventListener("click", (e) => {
-   rotacionRuleta()
-})construc
 //Bryan
 
 //Angela
