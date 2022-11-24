@@ -1,0 +1,48 @@
+/*----------MARDELYS--------*/
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+   background: #000;
+   
+}
+.container-marde{
+   width:80%;
+   height: 80%;
+   text-align: center;
+   margin: 0 10% 0 15%;
+}
+#animacion-ruleta{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 600px;
+   background-image: url(/src/Fondo-juego2.jpg);
+   background-repeat: no-repeat;
+   background-size: contain;
+   justify-items: center;
+   position: relative;
+
+}
+.hacha{
+   width: 15%;
+   position: absolute;
+   top: 80%;
+   left: 40%;
+
+}
+.ruleta{
+ width: 30%;
+ position: absolute;
+ top: 25%;
+ left: 20%;
+}
+#play-ruleta{
+   width: 20%;
+   padding: 20px;
+   position: absolute;
+   top: 80%;
+   left: 5%;
+}
