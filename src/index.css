@@ -39,11 +39,29 @@ body{
  top: 25%;
  left: 5%;
 }
-.cuerpo-ruleta{
-   width:85% ;
+.container-cuerpo{
+   top: 25%;
+   position: relative;
+}
+.cuerpo-ruleta1, .cuerpo-ruleta2,.cuerpo-ruleta{
    position: absolute;
-   left: 8%;
-   top: 26%;
+}
+.cuerpo-ruleta{
+   left: 5%;
+   width: 93%;
+}
+.cuerpo-ruleta1{
+   width:38% ;
+   left: 50%;
+   padding-top: 8%;
+   display: none;
+
+}
+.cuerpo-ruleta2{
+   width:38% ;
+   left: 12%;
+   padding-top: 10%;
+   display: none;
 }
 #play-ruleta{
    width: 20%;
