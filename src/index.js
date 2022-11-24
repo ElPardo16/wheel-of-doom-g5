@@ -11,6 +11,7 @@ class ANIMACION{
 }
 
 
+
 function rotacionRuleta(){
    gsap.to('.ruleta', {
    duration: 1,
