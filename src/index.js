@@ -3,12 +3,6 @@
 //Mardelys
 
 const btnplay = document.getElementById('#play-ruleta');
-const animacioRuleta = document.getElementById('#animacion-ruleta');
-class ANIMACION{
-   constructor(animacioRuleta){
-   this.canPlay = false;
-}
-}
 
 
 function rotacionRuleta(){
@@ -19,23 +13,21 @@ function rotacionRuleta(){
 
 })
 
-}
+};
 
 function rotacionHacha(){
     gsap.to('.hacha',{
    duration : 1,
    rotate : '700deg',
-   x: -100,
-   y: -350,
+   x: -20,
+   y: -450,
    scale: 0.5,
 })
 }
    
    
 
-btnplay.addEventListener("click", (e) => {
-   rotacionRuleta()
-})construc
+
 //Bryan
 
 //Angela
