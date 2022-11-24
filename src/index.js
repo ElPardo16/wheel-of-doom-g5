@@ -2,30 +2,44 @@
 
 //Mardelys
 
-const btnplay = document.getElementById('#play-ruleta');
+var $playRuleta = document.getElementById('#play-ruleta');
+var tl = gsap.timeline();
 
 
-function rotacionRuleta(){
-   gsap.to('.ruleta', {
-   duration: 1,
-   rotate : '360deg',
-   x: 0,
-
-})
+function playRuleta(){
+      for(i=0; $playRuleta === true; i++){
+      tl.to('.ruleta', {
+         duration: 1,
+         rotate : '360deg',
+         x: 0,
+         repeat: 1,
+      },'0')
+   
+      tl.to('.cuerpo-ruleta', {
+         duration: 1,
+         rotate : '360deg',
+         x: 0,
+         repeat: 1,
+      },'-=2')
+   
+      tl.to('.hacha',{
+         duration : 1,
+         rotate : '700deg',
+         x: 5,
+         y: -450,
+         scale: 0.5,
+      },'-=1')
+      tl.from('.hacha',{
+         duration: 0.5,
+         ease: 'linear',
+         x:0,
+         y:-10,
+         scale:2,
+      },'-=2')
+   }
 
 };
 
-function rotacionHacha(){
-    gsap.to('.hacha',{
-   duration : 1,
-   rotate : '700deg',
-   x: -20,
-   y: -450,
-   scale: 0.5,
-})
-}
-   
-   
 
 
 //Bryan

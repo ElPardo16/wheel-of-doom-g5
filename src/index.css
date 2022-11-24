@@ -18,11 +18,12 @@ body{
    flex-direction: column;
    width:100%;
    height: 800px;
-   background-image: url(/src/Fondo-juego2.jpg);
+   background-image: url(/src/img/Imagenes_sin_compresion/marde-imagenes/fondo_1.jpg);
    background-repeat: no-repeat;
    background-size: cover;
    justify-items: center;
    position: relative;
+   background-position: center;
 
 }
 .hacha{
@@ -33,11 +34,16 @@ body{
 
 }
 .ruleta{
- width: 80%;
+ width: 90%;
  position: absolute;
  top: 25%;
- left: 10%;
- transform:rotate(360deg) 3s;
+ left: 5%;
+}
+.cuerpo-ruleta{
+   width:85% ;
+   position: absolute;
+   left: 8%;
+   top: 26%;
 }
 #play-ruleta{
    width: 20%;
