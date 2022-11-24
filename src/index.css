@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-c: #300000;
+}
+body{
+    background: var(--bg-c);
+    height: 100vh;
+    display: grid;
+    grid: 50% 40% 10% / 1fr;
+    place-items: center;
+}
+.game_container{
+    background: white;
+    place-self: stretch;
+}
+.inputs{
+    display: grid;
+    grid: 40px / 60% 20% 20%;
+    padding: 15px 20px;
+    gap: 5px;
+}
+.inputs input{
+    border: solid white 2px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .6);
+    padding-left: 10px;
+    font-weight: bold;
+    color: var(--bg-c);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+::placeholder{
+    color: var(--bg-c);
+    opacity: .6;
+}
+a{
+    display: grid;
+    text-decoration: none;
+    color: white;
+    place-items: center;
+}
+.inputs a span{
+    font-size: 2rem;
+}
+.inputs a:last-of-type{
+    background: white;
+    color: var(--bg-c);
+    border-radius: 10px;
+}
+.info{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    overflow-y: scroll;
+    padding: 20px 0;
+}
+.info li{
+    display: grid;
+    grid: 1fr / 3fr 1fr;
+    place-items: center;
+    padding: 10px 20px 10px 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
+.info li span{
+    justify-self: start;
+}
+.info li a > span:last-child{
+    font-size: 2rem;
+}
