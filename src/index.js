@@ -36,14 +36,14 @@ function playRuleta(){
    tl.to('.hacha',{
       duration : 0.9,
       rotate : '700deg',
-      x: -180,
-      y: -450,
+      x: -300,
+      y: -250,
       scale: 0.5,
    },'-=0.7')
 
    tl.to('.cuerpo-ruleta2', {
       duration: 0.4,
-      rotate : '-15deg',
+      rotate : '-12deg',
       x: 0,
       y: 0,
       repeat: 0,

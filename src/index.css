@@ -28,7 +28,7 @@ body{
 
 }
 .hacha{
-   width: 50%;
+   width: 0%;
    position: absolute;
    top: 80%;
    left: 40%;
@@ -138,19 +138,19 @@ body{
    #animacion-ruleta{
       display: flex;
       flex-direction: column;
-      height: 00px;
+      height: 700px;
       
    
    }
    .hacha{
-      width: 38%;
+      width: 20%;
       position: absolute;
-      top: 60%;
-      left: 49%;
+      top: 50%;
+      left: 60%;
    
    }
    .ruleta{
-      width: 38%;
+      width: 35%;
       top: 12%;
       left: 30%;
    }
@@ -159,25 +159,20 @@ body{
    }
    .cuerpo-ruleta{
       left: 30%;
-      width: 38%;
+      width: 35%;
    }
    .cuerpo-ruleta1{
-      width:17% ;
-      left: 50%;
-      padding-top: 8%;
-      display: none;
+      width:15% ;
+      left: 48%;
    }
    .cuerpo-ruleta2{
-      width:17% ;
-      left: 31%;
-      padding-top: 9%;
-      display: none;
+      width:15% ;
+      left: 32%;
+      padding-top: 8.5%;
    }
    .sangre-ruleta{
-      width:40% ;
-      left: 27%;
-      display: none;
-      position: absolute;
+      width:30% ;
+      left: 33%;
    }
    #play-ruleta{
       width: 20%;
@@ -187,7 +182,7 @@ body{
       left: 5%;
 }
 }
-@media (min-width: 750px){
+/*@media (min-width: 750px){
    #animacion-ruleta{
       display: flex;
       flex-direction: column;
@@ -278,4 +273,4 @@ body{
       position: absolute;
       top: 80%;
       left: 5%;
-}}
+}}*/
