@@ -25,7 +25,13 @@ var listNamesGame = [...saveListNames]
 //Andres
 function drawArray(names){
     lista.innerHTML = ""
-    names.forEach(({name}) => lista.innerHTML += `<li><span>${name}</span><a href="javascript:void(0)" onclick="deleteName(this)"><span class="material-symbols-outlined">delete</span></a></li>`)
+    names.forEach(({name, sacrificado}) => {
+        if(!sacrificado){
+            lista.innerHTML += `<li><span>${name}</span><a href="javascript:void(0)" onclick="deleteName(this)"><span class="material-symbols-outlined">delete</span></a></li>`
+        }else{
+            lista.innerHTML += `<li><span class="dead">${name}</span><a href="javascript:void(0)" onclick="deleteName(this)"><span class="material-symbols-outlined">delete</span></a></li>`
+        }
+    })
 }
 function addName(){
     if (!listNamesGame.some(({name}) => name == inputName.value.toLowerCase())){
@@ -50,7 +56,7 @@ function restartGame(){
 
 }
 function soundFX(){
-    
+
 }
 drawArray(listNamesGame)
 btnAdd.addEventListener("click" , addName)
