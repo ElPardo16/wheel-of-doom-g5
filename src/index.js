@@ -9,6 +9,7 @@ $playRuleta.addEventListener('click', (e) => {
    e.preventDefault();
    document.value = true;
    for(i = 0;document.value === true;i++) {
+      tl.restart(false,false)
       return playRuleta();
    };
 });
