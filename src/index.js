@@ -15,49 +15,57 @@ $playRuleta.addEventListener('click', (e) => {
 
 function playRuleta(){
    tl.to('.ruleta', {
-      duration: 1.5,
+      duration: 1,
       rotate : '360deg',
       x: 0,
-      repeat: 1,
+      repeat: 2,
    },'0')
 
 
    tl.to('.cuerpo-ruleta', {
-      duration: 1.5,
+      duration: 1,
       rotate : '360deg',
       x: 0,
       y: 0,
-      repeat: 1,
+      repeat: 2,
       display: 'none',
    },'-=3')
    
    
 
    tl.to('.hacha',{
-      duration : 1,
+      duration : 0.9,
       rotate : '700deg',
-      x: 0,
+      x: -180,
       y: -450,
       scale: 0.5,
-   },'-=0.8')
-   
+   },'-=0.7')
+
    tl.to('.cuerpo-ruleta2', {
-      duration: 1.5,
-      rotate : '-10deg',
+      duration: 0.4,
+      rotate : '-15deg',
       x: 0,
       y: 0,
       repeat: 0,
       display: 'block',
    },'-=0.1')
+   
    tl.to('.cuerpo-ruleta1', {
-      duration: 1.5,
-      rotate : '10deg',
+      duration: 0.4,
+      rotate : '15deg',
       x: 0,
       y: 0,
       repeat: 0,
       display: 'block',
-   },'-=1.6')
-
+   },'-=0.3')
+   tl.to('.sangre-ruleta', {
+      duration: 0.3,
+      rotate : '15deg',
+      x:6,
+      y: 0,
+      repeat: 0,
+      display: 'block',
+   },'-=0.3')
 };
 
 //Bryan
