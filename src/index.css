@@ -12,10 +12,22 @@
     width: 100vw;
 }
 
-.spectators-shadow{
-    width: 100%;
+.container-hands{
     position: absolute;
     bottom: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.spectators-shadow{
+    width: 100%;
+}
+
+.blade-blood{
+    position: absolute;
+    right: 92px;
+    top: 168px;
+    width: 150px;
 }
 
 .guillotine-blade{
@@ -26,7 +38,7 @@
     position: relative;
 }
 
-.guillotine-blade img:first-of-type{
+.blade img:first-of-type{
     width: 192px;
     position: absolute;
     right: 72px;
@@ -41,6 +53,6 @@
 .head-sacrifice{
     position: absolute;
     width: 210px;
-    bottom: 8px;
-    right: 5px;
+    bottom:5px;
+    right: 5.5px;
 }
