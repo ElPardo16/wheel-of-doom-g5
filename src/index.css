@@ -89,6 +89,10 @@ body{
     pointer-events: none;
     opacity: .6;
 }
+.disable{
+    pointer-events: none;
+    opacity: .6;
+}
 @media (min-width: 1000px){
     body{
         grid: 85% 15% / 1fr 30%;

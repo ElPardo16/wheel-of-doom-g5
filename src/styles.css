@@ -54,6 +54,7 @@ body{
     position: absolute;
     inset: 0;
     margin: auto;
+    overflow: hidden;
 }
 .img-con img{
     position: absolute;
