@@ -14,6 +14,7 @@ var saveListNames = [
     }
 ]
 var listNamesGame = [...saveListNames]
+var deads = 0;
 //Robinson
 
 //Mardelys
@@ -49,8 +50,24 @@ function deleteName(element){
     listNamesGame = listNamesGame.filter(({name}) => name != txtName)
     drawArray(listNamesGame)
 }
-function sacrifice(){
-    
+function sacrifice(victims){
+    let ready = false
+    let indexRandom = Math.floor(Math.random() * listNamesGame.length)
+    while(!ready){
+        if(deads < listNamesGame.length){
+            if(victims[indexRandom].sacrificado){
+                indexRandom = Math.floor(Math.random() * listNamesGame.length)
+            }else{
+                ready = true
+                victims[indexRandom].sacrificado = true
+                deads++
+            }
+        }else{
+            ready = true
+            console.log("se acabaron")
+        }
+    }
+    drawArray(listNamesGame)
 }
 function restartGame(){
 
@@ -59,4 +76,8 @@ function soundFX(){
 
 }
 drawArray(listNamesGame)
+setTimeout(() => sacrifice(listNamesGame), 2000)
+/* setTimeout(() => sacrifice(listNamesGame), 4000)
+setTimeout(() => sacrifice(listNamesGame), 6000)
+setTimeout(() => sacrifice(listNamesGame), 12000) */
 //btnAdd.addEventListener("click" , addName)
