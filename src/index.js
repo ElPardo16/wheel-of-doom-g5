@@ -59,4 +59,4 @@ function soundFX(){
 
 }
 drawArray(listNamesGame)
-btnAdd.addEventListener("click" , addName)
+//btnAdd.addEventListener("click" , addName)

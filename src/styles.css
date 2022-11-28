@@ -3,9 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
+.bg, .go{
+    background: url(./img/imagenes_comprimidas/fondo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 body{
     position: relative;
     height: 100vh;
+}
+.bg::before{
+    content: "";
+    background:url(./img/imagenes_comprimidas/manchas\ de\ sangre.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    display: block;
+    inset: 0;
+    margin: auto;
+    z-index: -1;
+}
+.go::before{
+    content: "";
+    background:rgba(180, 0, 0, .4);
+    position: absolute;
+    display: block;
+    inset: 0;
+    margin: auto;
+}
+.title{
+    position: absolute;
+    width: 80%;
+    inset: 0;
+    margin: auto;
+    max-width: 400px;
+    margin-top: 10vh;
+}
+.go .title{
+    margin-top: 20vh;
 }
 .float{
     position: absolute;
@@ -14,6 +49,34 @@ body{
     height: 60px;
     background: rgba(0,0,0, .6);
     border-radius: 10px;
+}
+.img-con{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+.img-con img{
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+    opacity: .6;
+}
+.img-con img:first-child{
+    top: -15%;
+    left: -40%;
+}
+.img-con img:nth-child(2){
+    top: 5%;
+    right: -50%;
+}
+.img-con img:nth-child(3){
+    bottom: 10%;
+    left: -40%;
+}
+.img-con img:nth-child(4){
+    bottom: -10%;
+    right: -70%;
+    width: 120%;
 }
 .m{
     right: 5vw;
@@ -41,7 +104,7 @@ a{
     align-items: center;
     inset: 0;
     margin: auto;
-    margin-bottom: 150px;
+    margin-bottom: 10vh;
 }
 .btn{
     width: 80%;
@@ -59,4 +122,20 @@ a{
 .b{
     background:rgba(0,0,0, .6);
     border: solid 2px rgb(0,0,0);
+}
+@media (min-width: 1000px) {
+    .title{
+        margin-top: 20px;
+    }
+    .container{
+        margin-bottom: 50px;
+    }
+}
+@media (min-height: 900px) {
+    .title{
+        margin-top: 15vh;
+    }
+    .container{
+        margin-bottom: 20vh;
+    }
 }
