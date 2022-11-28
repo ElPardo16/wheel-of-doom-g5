@@ -46,17 +46,24 @@ function playRuleta(){
       y: 0,
       repeat: 2,
       display: 'none',
-   },'-=3')
+   },'0')
    
    
 
    tl.to('.hacha',{
       duration : 0.9,
       rotate : '700deg',
-      x: -300,
-      y: -250,
+      x: '-60%',
+      y: '-30%',
       scale: 0.5,
-   },'-=0.7')
+   },'+2')
+   tl.from('.hacha',{
+      duration : 0.9,
+      rotate : '0deg',
+      x: '0%',
+      y: '10%',
+      scale: 1,
+   },'+3.5')
 
    tl.to('.cuerpo-ruleta2', {
       duration: 0.4,
@@ -65,7 +72,7 @@ function playRuleta(){
       y: 0,
       repeat: 0,
       display: 'block',
-   },'-=0.1')
+   },'+3')
    
    tl.to('.cuerpo-ruleta1', {
       duration: 0.4,
@@ -74,7 +81,7 @@ function playRuleta(){
       y: 0,
       repeat: 0,
       display: 'block',
-   },'-=0.3')
+   },'+3')
    tl.to('.sangre-ruleta', {
       duration: 0.3,
       rotate : '15deg',
@@ -82,7 +89,7 @@ function playRuleta(){
       y: 0,
       repeat: 0,
       display: 'block',
-   },'-=0.3')
+   },'+3')
 };
 
 //Bryan

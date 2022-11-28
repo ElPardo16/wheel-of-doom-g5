@@ -74,15 +74,7 @@ a{
 .info li a > span:last-child{
     font-size: 2rem;
 }/*----------MARDELYS--------*/
-*{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
-body{
-   background: #000;
-   
-}
+
 .container-marde{
    width:100%;
    height: 100%;
@@ -92,8 +84,8 @@ body{
 #animacion-ruleta{
    display: flex;
    flex-direction: column;
-   width:100%;
-   height: 1000px;
+   width: 100vw;
+   height: 50vh;
    background-image: url(/src/img/Imagenes_sin_compresion/marde-imagenes/fondo_1.jpg);
    background-repeat: no-repeat;
    background-size: cover;
@@ -102,45 +94,48 @@ body{
    background-position: center;
 
 }
+.container-hacha {
+height: 50vh;
+}
 .hacha{
-   width: 0%;
-   position: absolute;
-   top: 80%;
-   left: 40%;
+   width: 50%;
+   position: relative;
+   top: 100%;
+   left: 30%;
 
 }
 .ruleta{
- width: 90%;
+ width: 60%;
  position: absolute;
- top: 25%;
- left: 5%;
+ top: 20%;
+ left: 20%;
 }
 .container-cuerpo{
-   top: 25%;
+   top: 20%;
    position: relative;
 }
 .cuerpo-ruleta1, .cuerpo-ruleta2,.cuerpo-ruleta{
    position: absolute;
 }
 .cuerpo-ruleta{
-   left: 5%;
-   width: 93%;
+   left: 25%;
+   width: 50%;
 }
 .cuerpo-ruleta1{
-   width:38% ;
+   width:24% ;
    left: 50%;
-   padding-top: 8%;
+   padding-top: 5%;
    display: none;
 }
 .cuerpo-ruleta2{
-   width:38% ;
-   left: 12%;
-   padding-top: 10%;
+   width:24% ;
+   left: 25%;
+   padding-top: 6%;
    display: none;
 }
 .sangre-ruleta{
-   width:80% ;
-   left: 10%;
+   width:40% ;
+   left: 25%;
    display: none;
    position: absolute;
 }
@@ -149,83 +144,27 @@ body{
    padding: 20px;
    position: absolute;
    top: 80%;
-   left: 5%;
+   left: 15%;
 }
-@media (max-width: 700px){
-   .container-marde{
-      width:100%;
-      height: 100%;
-      text-align: center;
-      
-   }
+
+@media (max-width: 1000px){
    #animacion-ruleta{
       display: flex;
       flex-direction: column;
-      height: 800px;
+      height: 50vh;
+      width: 100vw;
       
    
    }
    .hacha{
-      width: 50%;
+      width: 30%;
       position: absolute;
-      top: 60%;
-      left: 55%;
-   
-   }
-   .ruleta{
-      width: 70%;
-      top: 18%;
-      left: 15%;
-   }
-   .container-cuerpo{
-      top: 18%;
-   }
-   .cuerpo-ruleta{
-      left: 15%;
-      width: 70%;
-   }
-   .cuerpo-ruleta1{
-      width:30% ;
+      top: 30%;
       left: 50%;
-      padding-top: 8%;
-      display: none;
-   }
-   .cuerpo-ruleta2{
-      width:30% ;
-      left: 18%;
-      padding-top: 10%;
-      display: none;
-   }
-   .sangre-ruleta{
-      width:70% ;
-      left: 10%;
-      display: none;
-      position: absolute;
-   }
-   #play-ruleta{
-      width: 20%;
-      padding: 20px;
-      position: absolute;
-      top: 80%;
-      left: 5%;
-}}
-@media (max-width: 1540px){
-   #animacion-ruleta{
-      display: flex;
-      flex-direction: column;
-      height: 700px;
-      
-   
-   }
-   .hacha{
-      width: 20%;
-      position: absolute;
-      top: 50%;
-      left: 60%;
    
    }
    .ruleta{
-      width: 35%;
+      width: 30%;
       top: 12%;
       left: 30%;
    }
@@ -234,16 +173,17 @@ body{
    }
    .cuerpo-ruleta{
       left: 30%;
-      width: 35%;
+      width: 30%;
    }
    .cuerpo-ruleta1{
-      width:15% ;
-      left: 48%;
+      width:13% ;
+      padding-top: 5%;
+      left: 45%;
    }
    .cuerpo-ruleta2{
-      width:15% ;
-      left: 32%;
-      padding-top: 8.5%;
+      width:13% ;
+      left: 31%;
+      padding-top: 5.2%;
    }
    .sangre-ruleta{
       width:30% ;
@@ -257,96 +197,3 @@ body{
       left: 5%;
 }
 }
-/*@media (min-width: 750px){
-   #animacion-ruleta{
-      display: flex;
-      flex-direction: column;
-      height: 1000px;
-      
-   
-   }
-   .hacha{
-      width: 45%;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-   
-   }
-   .ruleta{
-      width: 70%;
-      top: 12%;
-      left: 15%;
-   }
-   .container-cuerpo{
-      top: 12%;
-   }
-   .cuerpo-ruleta{
-      left: 15%;
-      width: 70%;
-   }
-   .cuerpo-ruleta1{
-      width:31% ;
-      left: 50%;
-      padding-top: 8%;
-      display: none;
-   }
-   .cuerpo-ruleta2{
-      width:31% ;
-      left: 18%;
-      padding-top: 9%;
-      display: none;
-   }
-   .sangre-ruleta{
-      width:55% ;
-      left: 20%;
-      display: none;
-      position: absolute;
-   }
-   #play-ruleta{
-      width: 20%;
-      padding: 20px;
-      position: absolute;
-      top: 80%;
-      left: 5%;
-}
-}
-
-@media (min-width: 350px){
-   #animacion-ruleta{
-      height: 600px;
-   }
-   .hacha{
-      width: 60%;
-      top: 60%;
-      left: 50%;
-   
-   }
-   .ruleta{
-      width: 90%;
-      top: 10%;
-      left: 5%;
-   }
-   
-
-   .cuerpo-ruleta{
-      left: 9%;
-      width: 80%;
-   }
-   .cuerpo-ruleta1{
-      width:35% ;
-      left: 50%;
-   }
-   .cuerpo-ruleta2{
-      width:35% ;
-      left: 13%;
-   }
-   .sangre-ruleta{
-      width:50% ;
-   }
-   #play-ruleta{
-      width: 20%;
-      padding: 20px;
-      position: absolute;
-      top: 80%;
-      left: 5%;
-}}*/
