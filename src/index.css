@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game_container_1 {
+    background-image: url("../src/img/Imagenes_sin_compresion/robinson_imagenes/FONDO.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.perfil_de_hierro{
+    width: 100%;
+}
+
+.gancho{
+    position: absolute;
+}
+.gancho img{
+    margin-top: -2rem;
+    margin-left: 1rem;
+    height: 6rem;
+}
+
+.cuerpo_dospartes{
+    position: relative;
+    display: flex;
+    margin-top: -3rem;
+}
+
+.cuerpo_dospartes img{
+    height: 25rem;
+}
+
+.parte_1_cuerpo{
+    position: relative;
+}
+
+
+.parte_2_cuerpo{
+    position: relative;
+    margin-left: -7.5rem;
+}
+
+.sierra{
+    clip-path: inset(0 0 50% 0);
+}
+.sierra img{
+    width: 20rem;
+}
