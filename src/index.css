@@ -4,49 +4,192 @@
     box-sizing: border-box;
 }
 
+body{
+    background: var(--bg-c);
+    height: 100vh;
+    display: grid;
+    grid: 50% 40% 10% / 1fr;
+    place-items: center;
+}
+.game_container{
+    background: white;
+    place-self: stretch;
+}
+.inputs{
+    display: grid;
+    grid: 40px / 60% 20% 20%;
+    padding: 15px 20px;
+    gap: 5px;
+}
+.inputs input{
+    border: solid white 2px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .6);
+    padding-left: 10px;
+    font-weight: bold;
+    color: var(--bg-c);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+::placeholder{
+    color: var(--bg-c);
+    opacity: .6;
+}
+a{
+    display: grid;
+    text-decoration: none;
+    color: white;
+    place-items: center;
+}
+
+:root{
+    --bg-c: #300000;
+}
+
+.inputs a span{
+    font-size: 2rem;
+}
+.inputs a:last-of-type{
+    background: white;
+    color: var(--bg-c);
+    border-radius: 10px;
+}
+.info{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    overflow-y: scroll;
+    padding: 20px 0;
+}
+.info li{
+    display: grid;
+    grid: 1fr / 3fr 1fr;
+    place-items: center;
+    padding: 10px 20px 10px 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
+.info li span{
+    justify-self: start;
+}
+.info li a > span:last-child{
+    font-size: 2rem;
+}
+
 .game_container_1 {
     background-image: url("../src/img/Imagenes_sin_compresion/robinson_imagenes/FONDO.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
+    width: 76%;
+    height: 145%;
+    text-align:center;   
 }
 
 .perfil_de_hierro{
-    width: 100%;
+    width: 70%;
+    position: absolute;
+}
+
+.cuerpos{
+    display: flex;
+    gap: 3rem;
+    padding-top: 4.8rem;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+
+@media (max-width: 1000px){
+    .game_container_1{
+        width: 90%;
+    }
+
+    .perfil_de_hierro{
+        width: 90%;
+    }
+
+    .perfil_de_hierro img{
+        clip-path: inset(0 74% 0 0);
+    }
+
+    .cuerpos{
+        gap: 2rem;
+    }
+}
+
+.seccion_cuerpos_1{
+    display: flex;
+}
+
+
+.seccion_cuerpos_1 img{
+    height: 400px;
 }
 
 .gancho{
-    position: absolute;
-}
-.gancho img{
-    margin-top: -2rem;
     margin-left: 1rem;
-    height: 6rem;
+    position: absolute;
+    z-index: 0;
+}
+
+.gancho img{
+    height: 5rem;
 }
 
 .cuerpo_dospartes{
-    position: relative;
     display: flex;
-    margin-top: -3rem;
+    margin-top: 2rem;
+    position: relative;
+
 }
 
 .cuerpo_dospartes img{
-    height: 25rem;
+    height: 23rem;
 }
 
 .parte_1_cuerpo{
     position: relative;
+    z-index: 4;
 }
 
+@media (max-width: 1000px){
+    #segundo_cuerpo{
+        display: none;
+    } 
+}
 
 .parte_2_cuerpo{
     position: relative;
-    margin-left: -7.5rem;
+    margin-left: -7rem;
+    z-index: 6;
 }
 
 .sierra{
+    position: relative;
+    height: 300px;
     clip-path: inset(0 0 50% 0);
+    z-index: 3;
 }
 .sierra img{
     width: 20rem;
 }
+
+
+#img_hacha {
+    height: 150px;
+    position: relative;
+    margin-top: -20rem;
+    margin-left: 60rem;
+    transform: rotate(25deg);
+    z-index: 5;
+}
+
+@media (max-width: 1000px){
+    #img_hacha{
+        display: none;
+    } 
+}
+
