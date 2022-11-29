@@ -69,12 +69,12 @@
 }
 
 .sprite{
-    background: url('/src/img/imagenes_guillotina/parca-sprite.png') left/cover;
+    background: url('/src/img/imagenes_guillotina/parca-sprite.png') right/cover;
     width: 370px;
     height: 500px;
     position: absolute;
     bottom: 130px;
-    right: 440px;
+    left: calc(100%/2 - 40px);
     background-position: 0px 0;
 }
     /* animation: parca .5s steps(6) 4s forwards;
