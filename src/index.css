@@ -31,29 +31,29 @@
 }
 
 .spectators-shadow{
-    width: 100%;
+    width: 300%;
 }
 
 .blade-blood{
     position: absolute;
-    right: 92px;
-    top: 168px;
-    width: 150px;
+    right: 65px;
+    top: 181px;
+    width: 140px;
 }
 
 .guillotine-blade{
     background: url('./img/imagenes_guillotina/guillotina_sola.png') center/contain no-repeat;
     height: 90%;
-    width: 400px;
+    width: 320px;
     margin: auto;
     position: relative;
 }
 
 .blade img:first-of-type{
-    width: 192px;
+    width: 162px;
     position: absolute;
-    right: 72px;
-    top: 135px;
+    right: 54px;
+    top: 160px;
 }
 
 .guillotine{
@@ -63,20 +63,99 @@
 
 .head-sacrifice{
     position: absolute;
-    width: 210px;
+    width: 150px;
     bottom:5px;
     right: 5.5px;
 }
 
 .sprite{
     background: url('/src/img/imagenes_guillotina/parca-sprite.png') right/cover;
-    width: 370px;
-    height: 500px;
+    width: 260px;
+    height: 400px;
     position: absolute;
-    bottom: 130px;
+    top: calc(100%/2 - 200px);
     left: calc(100%/2 - 40px);
     background-position: 0px 0;
 }
+
+
+
+@media (min-width:1024px) {
+    .container-guillotine{
+        background: url('./img/imagenes_guillotina/bg_guillotina.png') center/cover rgb(34, 33, 33);
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        animation: animarF 40s linear infinite;
+    }
+    
+    @keyframes animarF {
+        0%{
+            background-position: 0px;
+        }
+        100%{
+            background-position: -20vw;
+        }
+    }
+    
+    .container-hands{
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        overflow: hidden;
+    }
+    
+    .spectators-shadow{
+        width: 100%;
+    }
+    
+    .blade-blood{
+        position: absolute;
+        right: 92px;
+        top: 168px;
+        width: 150px;
+    }
+    
+    .guillotine-blade{
+        background: url('./img/imagenes_guillotina/guillotina_sola.png') center/contain no-repeat;
+        height: 90%;
+        width: 400px;
+        margin: auto;
+        position: relative;
+    }
+    
+    .blade img:first-of-type{
+        width: 192px;
+        position: absolute;
+        right: 72px;
+        top: 135px;
+    }
+    
+    .guillotine{
+        background: url('./img/imagenes_guillotina/escenario.png') center/contain no-repeat;
+        height: 90%;
+    }
+    
+    .head-sacrifice{
+        position: absolute;
+        width: 210px;
+        bottom:5px;
+        right: 5.5px;
+    }
+    
+    .sprite{
+        background: url('/src/img/imagenes_guillotina/parca-sprite.png') right/cover;
+        width: 370px;
+        height: 500px;
+        position: absolute;
+        top: unset;
+        right: unset;
+        bottom: 130px;
+        left: calc(100%/2 - 40px);
+        background-position: 0px 0;
+    }
+}
+
     /* animation: parca .5s steps(6) 4s forwards;
 }
 

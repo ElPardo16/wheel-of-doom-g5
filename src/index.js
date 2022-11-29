@@ -51,8 +51,14 @@ function guillotina (){
 
     //sprite
     function sprite () {
+        if (screen.width < 500) {
+            var movement = 260
+            console.log("celuco")
+        }else{
+            var movement = 369
+        }
+
         let step = 1
-        const movement = 369
         const maxStep = 6
 
         setTimeout(()=>{
