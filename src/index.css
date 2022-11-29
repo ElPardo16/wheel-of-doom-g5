@@ -194,6 +194,14 @@ body{
     background-position: 0px 0;
 }
 
+.hide{
+    opacity: 0;
+}
+
+.show{
+    opacity: 1;
+}
+
 @media (min-width:1000px) {
     .spectators-shadow{
         width: 100%;

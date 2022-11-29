@@ -26,6 +26,9 @@ var animationTime = 2000;
 
 function guillotina (){
 
+    const guillotine = document.getElementById('container-guillotine')
+    guillotine.classList.replace('hide', 'show')
+
     let tL = gsap.timeline ({
         repeat: Infinity,
         yoyo: true,
@@ -36,7 +39,7 @@ function guillotina (){
         y: 25,
     });
 
-    if(screen.width < 500){
+    if(screen.width < 1000){
         gsap.to('.blade',{
             duration:.8,
             y : 180,
@@ -76,7 +79,7 @@ function guillotina (){
 
     //sprite
     function sprite () {
-        let movement = screen.width < 500 ? 300 : 330;
+        let movement = screen.width < 1000 ? 300 : 330;
         let step = 1
         const maxStep = 6
 
@@ -105,7 +108,7 @@ function guillotina (){
 
 }
 
-guillotina()
+//guillotina()
 
 
 //Andres
@@ -197,6 +200,7 @@ function soundFX(){
 function playGame(){
     sacrifice(listNamesGame)
     btnPlay.classList.add("disable")
+    guillotina()
 }
 drawArray(listNamesGame)
 //setTimeout(() => sacrifice(listNamesGame), 2000)
