@@ -58,8 +58,7 @@ function guillotina (){
 
     //sprite
     function sprite () {
-        var movement = screen.width < 500 ? 300 : 369;
-
+        let movement = screen.width < 500 ? 300 : 369;
         let step = 1
         const maxStep = 6
 
