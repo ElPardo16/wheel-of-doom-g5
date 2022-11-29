@@ -1,3 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-c: #300000;
+}
+body{
+    background: var(--bg-c);
+    display: grid;
+    grid: 50% 40% 10% / 1fr;
+    place-items: center;
+}
+.game_container{
+    position: relative;
+    background: white;
+    place-self: stretch;
+}
+.inputs{
+    width: 95%;
+    display: grid;
+    grid: 40px / 60% 20% 20%;
+    padding: 15px 20px;
+    gap: 5px;
+}
+.inputs input{
+    border: solid white 2px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .6);
+    padding-left: 10px;
+    font-weight: bold;
+    color: var(--bg-c);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+::placeholder{
+    color: var(--bg-c);
+    opacity: .6;
+}
+.inputs a span{
+    font-size: 2rem;
+}
+.inputs a:last-of-type{
+    background: white;
+    color: var(--bg-c);
+    border-radius: 10px;
+}
+.info{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    overflow-y: scroll;
+    padding: 20px 0;
+}
+.info li{
+    display: grid;
+    grid: 1fr / 3fr 1fr;
+    place-items: center;
+    padding: 10px 20px 10px 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
+.info li span{
+    position: relative;
+    justify-self: start;
+}
+.info li a > span:last-child{
+    font-size: 2rem;
+}
+.dead{
+    opacity: .6;
+}
+.dead::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(./img/imagenes_comprimidas/mancha\ de\ sangre\ .png) no-repeat;
+    background-size: 150% 120%;
+    background-position: 40%;
+    opacity: .8;
+    inset: 0;
+    margin: auto;
+}
+.dead + a{
+    pointer-events: none;
+    opacity: .6;
+}
+.disable{
+    pointer-events: none;
+    opacity: .6;
+}
+@media (min-width: 1000px){
+    body{
+        grid: 85% 15% / 1fr 30%;
+    }
+    .inputs{
+        grid-column: 1 / 3;
+        grid: 40px / 60% 10% 30%;
+        gap: 10px;
+    }
+}
+@media (orientation: landscape) {
+    body{
+        grid: 85% 15% / 1fr 30%;
+    }
+    .inputs{
+        grid-column: 1 / 3;
+        grid: 40px / 60% 10% 30%;
+        gap: 10px;
+    }
+}
+
+
 /* ------- Guillotina ------- */
 
 .container-guillotine{
@@ -118,4 +235,3 @@
         background-position: 0px 0;
     }
 }
-
