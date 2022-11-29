@@ -11,6 +11,7 @@
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+    padding-bottom: 30px;
     animation: animarF 40s linear infinite;
 }
 
@@ -37,7 +38,7 @@
 .blade-blood{
     position: absolute;
     right: 65px;
-    top: 181px;
+    top: 126px;
     width: 140px;
 }
 
@@ -53,19 +54,20 @@
     width: 162px;
     position: absolute;
     right: 54px;
-    top: 160px;
+    top: 105px;
 }
 
 .guillotine{
-    background: url('./img/imagenes_guillotina/escenario.png') center/contain no-repeat;
-    height: 90%;
+    background: url('./img/imagenes_guillotina/escenario.png') bottom/contain no-repeat;
+    height: 550px;
+    width: 100%;
 }
 
 .head-sacrifice{
     position: absolute;
     width: 150px;
-    bottom:5px;
-    right: 5.5px;
+    bottom:35px;
+    right: 20px;
 }
 
 .sprite{
@@ -73,83 +75,49 @@
     width: 260px;
     height: 400px;
     position: absolute;
-    top: calc(100%/2 - 200px);
+    top: calc(100%/2 - 210px);
     left: calc(100%/2 - 40px);
     background-position: 0px 0;
 }
 
-
-
 @media (min-width:1024px) {
-    .container-guillotine{
-        background: url('./img/imagenes_guillotina/bg_guillotina.png') center/cover rgb(34, 33, 33);
-        height: 100vh;
-        width: 100vw;
-        overflow-x: hidden;
-        animation: animarF 40s linear infinite;
-    }
-    
-    @keyframes animarF {
-        0%{
-            background-position: 0px;
-        }
-        100%{
-            background-position: -20vw;
-        }
-    }
-    
-    .container-hands{
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        overflow: hidden;
-    }
-    
     .spectators-shadow{
         width: 100%;
     }
     
     .blade-blood{
-        position: absolute;
         right: 92px;
         top: 168px;
         width: 150px;
     }
     
     .guillotine-blade{
-        background: url('./img/imagenes_guillotina/guillotina_sola.png') center/contain no-repeat;
-        height: 90%;
+        /* height: 90%;*/
         width: 400px;
-        margin: auto;
-        position: relative;
     }
     
     .blade img:first-of-type{
         width: 192px;
-        position: absolute;
         right: 72px;
         top: 135px;
     }
-    
+
     .guillotine{
-        background: url('./img/imagenes_guillotina/escenario.png') center/contain no-repeat;
+        background: url('./img/imagenes_guillotina/escenario.png') center/cover no-repeat;
         height: 90%;
     }
     
     .head-sacrifice{
-        position: absolute;
         width: 210px;
         bottom:5px;
         right: 5.5px;
     }
     
     .sprite{
-        background: url('/src/img/imagenes_guillotina/parca-sprite.png') right/cover;
+        /* background: url('/src/img/imagenes_guillotina/parca-sprite.png') right/cover; */
         width: 370px;
         height: 500px;
-        position: absolute;
         top: unset;
-        right: unset;
         bottom: 130px;
         left: calc(100%/2 - 40px);
         background-position: 0px 0;

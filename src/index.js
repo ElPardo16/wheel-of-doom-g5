@@ -16,14 +16,21 @@ function guillotina (){
     tL.to('.spectators-shadow',{
         duration: 2,
         y: 25,
-        borderBottom: 10 ,
     });
 
-    gsap.to('.blade',{
-        duration:.8,
-        y : 200,
-        ease: Expo.easeIn
-    })
+    if(screen.width < 500){
+        gsap.to('.blade',{
+            duration:.8,
+            y : 180,
+            ease: Expo.easeIn
+        })
+    }else{
+        gsap.to('.blade',{
+            duration:.8,
+            y : 200,
+            ease: Expo.easeIn
+        })
+    }
 
     gsap.to('.head-sacrifice',{
         duration:.7,
@@ -51,12 +58,7 @@ function guillotina (){
 
     //sprite
     function sprite () {
-        if (screen.width < 500) {
-            var movement = 260
-            console.log("celuco")
-        }else{
-            var movement = 369
-        }
+        var movement = screen.width < 500 ? 300 : 369;
 
         let step = 1
         const maxStep = 6
