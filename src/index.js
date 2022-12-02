@@ -18,6 +18,58 @@ var deads = 0;
 var animationTime = 2000;
 //Robinson
 
+var tl = gsap.timeline();
+const $playAnimation = document.querySelector('#iniciar_animacion');
+
+$playAnimation.addEventListener('click', (e) => {
+   e.preventDefault();
+   document.value = true;
+   for(i = 0;document.value === true;i++) {
+      tl.restart(false,false)
+      return playAnimation();
+   };
+});
+
+function playAnimation(){
+gsap.from('.cuerpos',{
+    duration: 2.5, ease: "elastic.out(1, 0.3)", x: 500
+})
+
+gsap.to("#sierra_girar", { rotation: 1800, duration: 4, ease: "none" });
+
+gsap.to("#img_hacha", {
+    x: -240, 
+    y: -350, 
+    duration: 1,
+    delay: 1,
+});
+
+gsap.to("#img_hacha",{
+    rotation: -750,
+    duration: 1,
+    ease: "none",
+    delay: 1,
+});
+
+gsap.to(".cuerpo_dospartes",{
+    ease: "power4.out",
+    y:180,
+    delay: 2.5,
+});
+
+gsap.to(".parte_1_cuerpo",{
+    rotation: 45,
+    duration: 1,
+    delay: 3,
+});
+
+gsap.to(".parte_2_cuerpo",{
+    rotation: -45,
+    duration: 1,
+    delay: 3,
+});
+
+};
 //Mardelys
 
 var tl = gsap.timeline();

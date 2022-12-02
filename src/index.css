@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -16,6 +18,7 @@ body{
     position: relative;
     background: white;
     place-self: stretch;
+    overflow: hidden;
 }
 .inputs{
     width: 95%;
@@ -367,3 +370,161 @@ height: 50vh;
         background-position: 0px 0;
     }
 }
+.game_container_1 {
+    background-image: url("../src/img/Imagenes_sin_compresion/robinson_imagenes/FONDO.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    text-align:center;   
+}
+
+.perfil_de_hierro{
+    position: absolute;
+}
+
+#iniciar_animacion{
+    position:fixed;
+    margin-top: 30rem;
+    margin-left: -35rem;
+    z-index: 8;
+    background-color: #700000;
+    opacity: .6 ;
+    border:  2px solid #FF0000;
+    border-radius: 10px;
+    font-family: 'Jua', sans-serif;
+    font-size: 35px;
+    color: white;
+    padding: 2rem;
+}
+
+#iniciar_animacion:hover{
+    opacity: 1;
+}
+
+#iniciar_animacion:after{
+    opacity: 0;
+}
+
+
+
+
+
+
+.cuerpos{
+    display: flex;
+    gap: 3rem;
+    padding-top: 4.8rem;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+.seccion_cuerpos_1{
+    display: flex;
+}
+
+
+.seccion_cuerpos_1 img{
+    height: 400px;
+}
+
+.gancho{
+    margin-left: 1rem;
+    position: absolute;
+    z-index: 0;
+}
+
+.gancho img{
+    height: 5rem;
+}
+
+.cuerpo_dospartes{
+    display: flex;
+    margin-top: 2rem;
+    position: relative;
+
+}
+
+.cuerpo_dospartes img{
+    height: 23rem;
+}
+
+.parte_1_cuerpo{
+    position: relative;
+    z-index: 4;
+}
+
+.parte_2_cuerpo{
+    position: relative;
+    margin-left: -7rem;
+    z-index: 6;
+}
+
+.sierra{
+    display: flex;
+    height: 300px;
+    width: 300px;
+    clip-path: inset(0 0 50% 0);
+    z-index: 3;
+    margin: 0% auto;
+}
+.sierra img{
+    width: 20rem;
+}
+
+
+#img_hacha {
+    height: 150px;
+    position: relative;
+    margin-top: -90rem;
+    margin-left: 55rem;
+    transform: rotate(25deg);
+    z-index: 5;
+}
+
+@media (max-width: 1000px){
+
+    .perfil_de_hierro img{
+        width: 1000px;
+    }
+
+    .cuerpos{
+        padding-top: 3.5rem;
+    }
+
+    #img_hacha{
+        display: none;
+    } 
+
+    .gancho{
+        margin-left: 0.4;
+    }
+
+    .gancho img{
+        height: 2rem;
+    }
+
+    .cuerpos{
+        gap: 2rem;
+    }
+
+    #segundo_cuerpo{
+        display: none;
+    } 
+
+    .cuerpo_dospartes img{
+        margin-top: -1rem;
+        height: 12rem;
+    }
+
+    .parte_2_cuerpo{
+        margin-left: -3.5rem;
+    }
+
+    .seccion_cuerpos_1 img{
+        height: 200px;
+    }
+
+}
+
