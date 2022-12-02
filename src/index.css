@@ -279,7 +279,7 @@ body {
 
 .container-hands {
     position: absolute;
-    bottom: 0;
+    bottom: -10%;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -310,7 +310,7 @@ body {
     width: 162px;
     position: absolute;
     right: 54px;
-    top: 105px;
+    top: 20%;
 }
 
 .guillotine {
@@ -333,8 +333,8 @@ body {
     width: 260px;
     height: 400px;
     position: absolute;
-    top: 20%;
-    left: calc(100%/2 - 40px);
+    top: 0;
+    left: calc(100%/2);
     background-position: 0px 0;
 }
 

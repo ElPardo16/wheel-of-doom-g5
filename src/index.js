@@ -142,31 +142,30 @@ function guillotina() {
     //const guillotine = document.getElementById('container-guillotine')
     //guillotine.classList.replace('hide', 'show')
 
-    let tL = gsap.timeline({
+   /*  let tL = gsap.timeline({
         repeat: Infinity,
         yoyo: true,
-    });
-
-    tL.to('.spectators-shadow', {
+    }); */
+    tl.to('.spectators-shadow', {
         duration: 2,
         y: 25,
     });
-
+   
     if (screen.width < 1000) {
-        gsap.to('.blade', {
+        tl.to('.blade', {
             duration: .8,
             y: 180,
             ease: Expo.easeIn
         })
     } else {
-        gsap.to('.blade', {
+        tl.to('.blade', {
             duration: .8,
             y: 200,
             ease: Expo.easeIn
         })
     }
-
-    gsap.to('.head-sacrifice', {
+  
+    tl.to('.head-sacrifice', {
         duration: .7,
         y: 105,
         x: 20,
@@ -174,7 +173,7 @@ function guillotina() {
         ease: Expo.easeIn
     })
 
-    gsap.fromTo('.blade-blood', {
+    tl.fromTo('.blade-blood', {
         opacity: 0,
     }, {
         opacity: 1,
@@ -182,7 +181,7 @@ function guillotina() {
         duration: .3,
     })
 
-    gsap.fromTo('.sprite', {
+    tl.fromTo('.sprite', {
         opacity: 0,
     }, {
         opacity: .8,
@@ -206,7 +205,7 @@ function guillotina() {
                 step = step > maxStep ? 1 : step + 1
                 sprite.style.backgroundPosition = `-${x}px 0px`
             }, 70)
-            gsap.to('.head-sacrifice', {
+            tl.to('.head-sacrifice', {
                 duration: .8,
                 x: 1000,
                 y: -300,
@@ -291,10 +290,11 @@ async function sacrifice(victims) {
                     confirmButtonColor: "red",
                     confirmButtonText: 'Ok',
                     showConfirmButton: true,
-                    timer: 1000,
+                    timer: 2500,
+                    heightAuto: false,
                     timerProgressBar: true
                 })
-                await delay(1200)
+                await delay(2700)
                 await animationRandom()
 
                 // llamar animacion
@@ -316,6 +316,7 @@ async function sacrifice(victims) {
                 confirmButtonText: 'Ok',
                 showConfirmButton: true,
                 timer: 4000,
+                heightAuto: false,
                 timerProgressBar: true
             })
             //await delay(4000)
@@ -324,7 +325,7 @@ async function sacrifice(victims) {
         }
         //drawArray(listNamesGame)
     }
-    console.log(listNamesGame.length)
+    //console.log(listNamesGame.length)
 }
 async function animationRandom() {
     //let indexAnimation = Math.floor(Math.random() * 2)
@@ -351,6 +352,7 @@ async function animationRandom() {
             anim4.classList.remove("animHide")
             guillotina()
             await delay(animationTime)
+            
             //anim4.classList.add("animHide")
             break;
         // terminar
