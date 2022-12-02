@@ -98,6 +98,93 @@ function playRuleta(){
 
 //Angela
 
+function guillotina (){
+
+    const guillotine = document.getElementById('container-guillotine')
+    guillotine.classList.replace('hide', 'show')
+
+    let tL = gsap.timeline ({
+        repeat: Infinity,
+        yoyo: true,
+    });
+
+    tL.to('.spectators-shadow',{
+        duration: 2,
+        y: 25,
+    });
+
+    if(screen.width < 1000){
+        gsap.to('.blade',{
+            duration:.8,
+            y : 180,
+            ease: Expo.easeIn
+        })
+    }else{
+        gsap.to('.blade',{
+            duration:.8,
+            y : 200,
+            ease: Expo.easeIn
+        })
+    }
+
+    gsap.to('.head-sacrifice',{
+        duration:.7,
+        y : 105,
+        x : 20,
+        delay: .5,
+        ease: Expo.easeIn
+    })
+
+    gsap.fromTo('.blade-blood', {
+        opacity:0,
+    },{
+        opacity:1,
+        delay:.7,
+        duration:.3,
+    })
+
+    gsap.fromTo('.sprite', {
+        opacity:0,
+    },{
+        opacity:.8,
+        delay:2,
+        duration:.3,
+    })
+
+    //sprite
+    function sprite () {
+        let movement = screen.width < 1000 ? 300 : 330;
+        let step = 1
+        const maxStep = 6
+
+        setTimeout(()=>{
+            setInterval(() => {
+                const sprite = document.querySelector('.sprite')
+                if(step >= maxStep){
+                    return
+                }
+                const x = step * movement
+                step = step > maxStep ? 1 : step + 1
+                sprite.style.backgroundPosition = `-${x}px 0px`
+            }, 70)
+            gsap.to('.head-sacrifice',{
+                duration:.8,
+                x : 1000,
+                y : -300,
+                delay: .5,
+                ease: Expo.Out
+            })
+        },2000)
+
+    }
+
+    sprite ()
+
+}
+
+//guillotina()
+
+
 //Andres
 function delay(seconds){
     seconds = seconds || 2000;
@@ -126,10 +213,20 @@ function addName(){
             })
             drawArray(listNamesGame)
         }else{
-            console.log("Vacio")
+            //console.log("vacio")
+            Swal.fire({
+                icon: 'error',
+                title: 'Campo vacío',
+                text: 'No es posible sacrificar una persona si no sabemos su nombre',
+            })
         }
     }else{
-        console.log("repite")
+        //console.log("repite")
+        Swal.fire({
+            icon: 'error',
+            title: 'Nombre repetido',
+            text: 'Esta persona ya se encuentra en la lista, ¡prueba con otra!',
+        })
     }
 }
 function deleteName(element){
@@ -146,7 +243,18 @@ async function sacrifice(victims){
                 indexRandom = Math.floor(Math.random() * listNamesGame.length)
             }else{
                 /* ready = true */
-                console.log("1 menos")
+                //console.log("1 menos")
+                Swal.fire({
+                    title: 'Sacrificado',
+                    imageUrl: 'https://i.postimg.cc/bw91g8N3/homero-lista.png',
+                    imageHeight: 150,
+                    text:victims[indexRandom].name,
+                    confirmButtonColor:"red",
+                    confirmButtonText:'Ok',
+                    showConfirmButton: true,
+                    timer: 1000,
+                    timerProgressBar: true
+                })
                 await delay(1000)
                 // llamar animacion
                 victims[indexRandom].sacrificado = true
@@ -156,9 +264,20 @@ async function sacrifice(victims){
         }else{
             ready = true
             //dialogo
-            console.log("se acabaron Game over")
-            await delay(1000)
-            alert("perdio")
+            //console.log("se acabaron Game over")
+            Swal.fire({
+                title: 'Juego terminado',
+                imageUrl: 'https://i.postimg.cc/wjMg3jNN/homero-parca.png',
+                imageHeight: 150,
+                text: "No quedan más sacrificios",
+                confirmButtonColor:"red",
+                confirmButtonText:'Ok',
+                showConfirmButton: true,
+                timer: 4000,
+                timerProgressBar: true
+            })
+            await delay(4000)
+            //alert("perdio")
             document.location.href = "game-over.html"
         }
         //drawArray(listNamesGame)
@@ -189,6 +308,7 @@ function playGame(){
     btnPlay.classList.add("disable")
 }
 drawArray(listNamesGame)
+guillotina()
 //setTimeout(() => sacrifice(listNamesGame), 2000)
 /* setTimeout(() => sacrifice(listNamesGame), 4000)
 setTimeout(() => sacrifice(listNamesGame), 6000)
