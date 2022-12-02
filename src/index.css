@@ -294,10 +294,14 @@ body {
 .blade-blood {
     position: absolute;
     right: 65px;
-    top: 126px;
+    top: 20px;
     width: 140px;
+    opacity: 0;
 }
-
+.swal2-html-container{
+    font-size: 1.6rem !important;
+    text-transform: capitalize !important;
+}
 .guillotine-blade {
     background: url('./img/imagenes_guillotina/guillotina_sola.png') center/contain no-repeat;
     height: 90%;

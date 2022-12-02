@@ -142,51 +142,50 @@ function guillotina() {
     //const guillotine = document.getElementById('container-guillotine')
     //guillotine.classList.replace('hide', 'show')
 
-   /*  let tL = gsap.timeline({
+    let tL = gsap.timeline ({
         repeat: Infinity,
         yoyo: true,
-    }); */
-    tl.to('.spectators-shadow', {
+    });
+
+    tL.to('.spectators-shadow',{
         duration: 2,
         y: 25,
     });
-   
-    if (screen.width < 1000) {
-        tl.to('.blade', {
-            duration: .8,
-            y: 180,
+
+        gsap.fromTo('.blade',{
+            y : 0,
+        },{
+            duration:.8,
+            y : 180,
             ease: Expo.easeIn
         })
-    } else {
-        tl.to('.blade', {
-            duration: .8,
-            y: 200,
-            ease: Expo.easeIn
-        })
-    }
-  
-    tl.to('.head-sacrifice', {
-        duration: .7,
-        y: 105,
-        x: 20,
+    
+
+    gsap.fromTo('.head-sacrifice',{
+        y : 0,
+        x : 0,
+    },{
+        duration:.7,
+        y : 105,
+        x : 20,
         delay: .5,
         ease: Expo.easeIn
     })
 
-    tl.fromTo('.blade-blood', {
-        opacity: 0,
-    }, {
-        opacity: 1,
-        delay: .7,
-        duration: .3,
+    gsap.fromTo('.blade-blood', {
+        opacity:0,
+    },{
+        opacity:1,
+        delay:.7,
+        duration:.3,
     })
 
-    tl.fromTo('.sprite', {
-        opacity: 0,
-    }, {
-        opacity: .8,
-        delay: 2,
-        duration: .3,
+    gsap.fromTo('.sprite', {
+        opacity:0,
+    },{
+        opacity:.8,
+        delay:2,
+        duration:.3,
     })
 
     //sprite
@@ -205,7 +204,7 @@ function guillotina() {
                 step = step > maxStep ? 1 : step + 1
                 sprite.style.backgroundPosition = `-${x}px 0px`
             }, 70)
-            tl.to('.head-sacrifice', {
+            gsap.to('.head-sacrifice', {
                 duration: .8,
                 x: 1000,
                 y: -300,
@@ -283,16 +282,16 @@ async function sacrifice(victims) {
                 /* ready = true */
                 //console.log("1 menos")
                 Swal.fire({
-                    title: 'Sacrificado',
+                    title: 'Proximo Sacrificado...',
                     imageUrl: 'https://i.postimg.cc/bw91g8N3/homero-lista.png',
                     imageHeight: 150,
                     text: victims[indexRandom].name,
                     confirmButtonColor: "red",
                     confirmButtonText: 'Ok',
-                    showConfirmButton: true,
+                    showConfirmButton: false,
                     timer: 2500,
                     heightAuto: false,
-                    timerProgressBar: true
+                    timerProgressBar: true,
                 })
                 await delay(2700)
                 await animationRandom()
@@ -314,7 +313,7 @@ async function sacrifice(victims) {
                 text: "No quedan más sacrificios",
                 confirmButtonColor: "red",
                 confirmButtonText: 'Ok',
-                showConfirmButton: true,
+                showConfirmButton: false,
                 timer: 4000,
                 heightAuto: false,
                 timerProgressBar: true
@@ -329,7 +328,7 @@ async function sacrifice(victims) {
 }
 async function animationRandom() {
     //let indexAnimation = Math.floor(Math.random() * 2)
-    let indexAnimation = 2
+    let indexAnimation = 3
     // hacer variable indexAnimation y asignar numero random entre 0 y 3
     switch (indexAnimation) {
         case 0:
@@ -352,8 +351,14 @@ async function animationRandom() {
             anim4.classList.remove("animHide")
             guillotina()
             await delay(animationTime)
-            
-            //anim4.classList.add("animHide")
+            anim4.classList.add("animHide")
+            break;
+        case 3:
+            animationTime = 5000
+            anim3.classList.remove("animHide")
+            guillotina()
+            await delay(animationTime)
+            anim3.classList.add("animHide")
             break;
         // terminar
     }
