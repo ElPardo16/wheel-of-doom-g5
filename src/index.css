@@ -1,33 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
+
+.animHide {
+    display: none;
+}
+
+:root {
     --bg-c: #300000;
 }
-body{
+
+body {
     background: var(--bg-c);
     display: grid;
     grid: 50% 40% 10% / 1fr;
     place-items: center;
 }
-.game_container{
+
+.game_container {
     position: relative;
     background: white;
     place-self: stretch;
     overflow: hidden;
 }
-.inputs{
+
+.inputs {
     width: 95%;
     display: grid;
     grid: 40px / 60% 20% 20%;
     padding: 15px 20px;
     gap: 5px;
 }
-.inputs input{
+
+.inputs input {
     border: solid white 2px;
     border-radius: 10px;
     background: rgba(255, 255, 255, .6);
@@ -37,26 +46,31 @@ body{
     font-size: 1.2rem;
     text-transform: capitalize;
 }
-::placeholder{
+
+::placeholder {
     color: var(--bg-c);
     opacity: .6;
 }
-.inputs a span{
+
+.inputs a span {
     font-size: 2rem;
 }
-.inputs a:last-of-type{
+
+.inputs a:last-of-type {
     background: white;
     color: var(--bg-c);
     border-radius: 10px;
 }
-.info{
+
+.info {
     width: 100%;
     height: 100%;
     list-style: none;
     overflow-y: scroll;
     padding: 20px 0;
 }
-.info li{
+
+.info li {
     display: grid;
     grid: 1fr / 3fr 1fr;
     place-items: center;
@@ -66,141 +80,136 @@ body{
     font-size: 1.6rem;
     text-transform: capitalize;
 }
-.info li span{
+
+.info li span {
     position: relative;
     justify-self: start;
 }
-.info li a > span:last-child{
-    font-size: 2rem;
-}/*----------MARDELYS--------*/
 
-.container-marde{
-   width:100%;
-   height: 100%;
-   text-align: center;
+.info li a>span:last-child {
+    font-size: 2rem;
+}
+
+/*----------MARDELYS--------*/
+
+.container-marde {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+}
+
+#animacion-ruleta {
+    background: url(/src/img/Imagenes_sin_compresion/marde-imagenes/fondo_1.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container-hacha {
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    bottom: 10%;
+    right: 10%;
+}
+
+.hacha {
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    margin: auto;
+}
+
+/* .ruleta {
+    width: 60%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+} */
+
+.container-cuerpo, .container-ruleta {
+    width: 70vw;
+    height: 70vw;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+.cuerpo-ruleta1,
+.cuerpo-ruleta2,
+.cuerpo-ruleta,
+.ruleta {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.cuerpo-ruleta {
    
 }
-#animacion-ruleta{
-   display: flex;
-   flex-direction: column;
-   width: 100vw;
-   height: 50vh;
-   background-image: url(/src/img/Imagenes_sin_compresion/marde-imagenes/fondo_1.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   justify-items: center;
-   position: relative;
-   background-position: center;
 
-}
-.container-hacha {
-height: 50vh;
-}
-.hacha{
-   width: 50%;
-   position: relative;
-   top: 100%;
-   left: 30%;
-
-}
-.ruleta{
- width: 60%;
- position: absolute;
- top: 20%;
- left: 20%;
-}
-.container-cuerpo{
-   top: 20%;
-   position: relative;
-}
-.cuerpo-ruleta1, .cuerpo-ruleta2,.cuerpo-ruleta{
-   position: absolute;
-}
-.cuerpo-ruleta{
-   left: 25%;
-   width: 50%;
+.cuerpo-ruleta1 ,.cuerpo-ruleta2{
+    width: auto;
+    display: none;
 }
 .cuerpo-ruleta1{
-   width:24% ;
-   left: 50%;
-   padding-top: 5%;
-   display: none;
+    transform: translateX(50%)
 }
-.cuerpo-ruleta2{
-   width:24% ;
-   left: 25%;
-   padding-top: 6%;
-   display: none;
-}
-.sangre-ruleta{
-   width:40% ;
-   left: 25%;
-   display: none;
-   position: absolute;
-}
-#play-ruleta{
-   width: 20%;
-   padding: 20px;
-   position: absolute;
-   top: 80%;
-   left: 15%;
+.cuerpo-ruleta2 {
+    transform: translateX(-50%)
 }
 
-@media (max-width: 1000px){
-   #animacion-ruleta{
-      display: flex;
-      flex-direction: column;
-      height: 50vh;
-      width: 100vw;
-      
-   
-   }
-   .hacha{
-      width: 30%;
-      position: absolute;
-      top: 30%;
-      left: 50%;
-   
-   }
-   .ruleta{
-      width: 30%;
-      top: 12%;
-      left: 30%;
-   }
-   .container-cuerpo{
-      top: 10%;
-   }
-   .cuerpo-ruleta{
-      left: 30%;
-      width: 30%;
-   }
-   .cuerpo-ruleta1{
-      width:13% ;
-      padding-top: 5%;
-      left: 45%;
-   }
-   .cuerpo-ruleta2{
-      width:13% ;
-      left: 31%;
-      padding-top: 5.2%;
-   }
-   .sangre-ruleta{
-      width:30% ;
-      left: 33%;
-   }
-   #play-ruleta{
-      width: 20%;
-      padding: 20px;
-      position: absolute;
-      top: 80%;
-      left: 5%;
-}
+.sangre-ruleta {
+    width: 40%;
+    left: 25%;
+    display: none;
+    position: absolute;
 }
 
-.dead{
+#play-ruleta {
+    width: 20%;
+    padding: 20px;
+    position: absolute;
+    top: 80%;
+    left: 15%;
+}
+
+@media (max-width: 1000px) {
+    #animacion-ruleta {}
+
+
+
+    .container-cuerpo {}
+
+    .cuerpo-ruleta {}
+
+    .cuerpo-ruleta1 {}
+
+    .cuerpo-ruleta2 {}
+
+    .sangre-ruleta {
+        width: 30%;
+        left: 33%;
+    }
+
+    #play-ruleta {
+        width: 20%;
+        padding: 20px;
+        position: absolute;
+        top: 80%;
+        left: 5%;
+    }
+}
+
+.dead {
     opacity: .6;
 }
-.dead::before{
+
+.dead::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -212,29 +221,35 @@ height: 50vh;
     inset: 0;
     margin: auto;
 }
-.dead + a{
+
+.dead+a {
     pointer-events: none;
     opacity: .6;
 }
-.disable{
+
+.disable {
     pointer-events: none;
     opacity: .6;
 }
-@media (min-width: 1000px){
-    body{
+
+@media (min-width: 1000px) {
+    body {
         grid: 85% 15% / 1fr 30%;
     }
-    .inputs{
+
+    .inputs {
         grid-column: 1 / 3;
         grid: 40px / 60% 10% 30%;
         gap: 10px;
     }
 }
+
 @media (orientation: landscape) {
-    body{
+    body {
         grid: 85% 15% / 1fr 30%;
     }
-    .inputs{
+
+    .inputs {
         grid-column: 1 / 3;
         grid: 40px / 60% 10% 30%;
         gap: 10px;
@@ -244,7 +259,7 @@ height: 50vh;
 
 /* ------- Guillotina ------- */
 
-.container-guillotine{
+.container-guillotine {
     background: url('./img/imagenes_guillotina/bg_guillotina.png') center/cover rgb(34, 33, 33);
     height: 100%;
     width: 100%;
@@ -253,15 +268,16 @@ height: 50vh;
 }
 
 @keyframes animarF {
-    0%{
+    0% {
         background-position: 0px;
     }
-    100%{
+
+    100% {
         background-position: -20vw;
     }
 }
 
-.container-hands{
+.container-hands {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -270,19 +286,19 @@ height: 50vh;
     background: linear-gradient(to top, #35302B 0%, #35302B 2%, transparent);
 }
 
-.spectators-shadow{
+.spectators-shadow {
     width: 300%;
     height: 370px;
 }
 
-.blade-blood{
+.blade-blood {
     position: absolute;
     right: 65px;
     top: 126px;
     width: 140px;
 }
 
-.guillotine-blade{
+.guillotine-blade {
     background: url('./img/imagenes_guillotina/guillotina_sola.png') center/contain no-repeat;
     height: 90%;
     width: 320px;
@@ -290,28 +306,29 @@ height: 50vh;
     position: relative;
 }
 
-.blade img:first-of-type{
+.blade img:first-of-type {
     width: 162px;
     position: absolute;
     right: 54px;
     top: 105px;
 }
 
-.guillotine{
+.guillotine {
+    position: relative;
     background: url('./img/imagenes_guillotina/escenario.png') bottom/contain no-repeat;
-    background-position-y:90%;
-    height: 550px;
+    background-position-y: 90%;
+    height: 80%;
     width: 100%;
 }
 
-.head-sacrifice{
+.head-sacrifice {
     position: absolute;
     width: 150px;
-    bottom:35px;
+    bottom: -5%;
     right: 20px;
 }
 
-.sprite{
+.sprite {
     background: url('/src/img/imagenes_guillotina/parca-sprite.png') right/cover;
     width: 260px;
     height: 400px;
@@ -321,48 +338,48 @@ height: 50vh;
     background-position: 0px 0;
 }
 
-.hide{
+.hide {
     opacity: 0;
 }
 
-.show{
+.show {
     opacity: 1;
 }
 
 @media (min-width:1000px) {
-    .spectators-shadow{
+    .spectators-shadow {
         width: 100%;
         height: auto;
     }
-    
-    .blade-blood{
-        right:75px;
+
+    .blade-blood {
+        right: 75px;
         top: 98px;
         width: 140px;
     }
-    
-    .guillotine-blade{
+
+    .guillotine-blade {
         width: 350px;
     }
-    
-    .blade img:first-of-type{
+
+    .blade img:first-of-type {
         width: 172px;
         right: calc(100%/2 - 114px);
         top: 70px;
     }
 
-    .guillotine{
+    .guillotine {
         height: 90%;
         width: 100%;
     }
-    
-    .head-sacrifice{
+
+    .head-sacrifice {
         width: 150px;
-        bottom:27px;
+        bottom: 27px;
         right: 35px;
     }
-    
-    .sprite{
+
+    .sprite {
         width: 330px;
         height: 450px;
         top: 6%;
@@ -370,27 +387,29 @@ height: 50vh;
         background-position: 0px 0;
     }
 }
+
 .game_container_1 {
+    position: relative;
     background-image: url("../src/img/Imagenes_sin_compresion/robinson_imagenes/FONDO.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 100%;
-    text-align:center;   
+    text-align: center;
 }
 
-.perfil_de_hierro{
+.perfil_de_hierro {
     position: absolute;
 }
 
-#iniciar_animacion{
-    position:fixed;
+#iniciar_animacion {
+    position: fixed;
     margin-top: 30rem;
     margin-left: -35rem;
     z-index: 8;
     background-color: #700000;
-    opacity: .6 ;
-    border:  2px solid #FF0000;
+    opacity: .6;
+    border: 2px solid #FF0000;
     border-radius: 10px;
     font-family: 'Jua', sans-serif;
     font-size: 35px;
@@ -398,133 +417,124 @@ height: 50vh;
     padding: 2rem;
 }
 
-#iniciar_animacion:hover{
+#iniciar_animacion:hover {
     opacity: 1;
 }
 
-#iniciar_animacion:after{
+#iniciar_animacion:after {
     opacity: 0;
 }
-
-
-
-
-
-
-.cuerpos{
+.cuerpos {
     display: flex;
     gap: 3rem;
     padding-top: 4.8rem;
     justify-content: center;
     position: relative;
     z-index: 3;
+    transform: translateX(120%)
 }
 
-.seccion_cuerpos_1{
+.seccion_cuerpos_1 {
     display: flex;
 }
 
 
-.seccion_cuerpos_1 img{
+.seccion_cuerpos_1 img {
     height: 400px;
 }
 
-.gancho{
+.gancho {
     margin-left: 1rem;
     position: absolute;
     z-index: 0;
 }
 
-.gancho img{
+.gancho img {
     height: 5rem;
 }
 
-.cuerpo_dospartes{
+.cuerpo_dospartes {
     display: flex;
     margin-top: 2rem;
     position: relative;
 
 }
 
-.cuerpo_dospartes img{
+.cuerpo_dospartes img {
     height: 23rem;
 }
 
-.parte_1_cuerpo{
+.parte_1_cuerpo {
     position: relative;
     z-index: 4;
 }
 
-.parte_2_cuerpo{
+.parte_2_cuerpo {
     position: relative;
     margin-left: -7rem;
     z-index: 6;
 }
 
-.sierra{
-    display: flex;
-    height: 300px;
-    width: 300px;
+.sierra {
+    position: relative;
+    height: 80vw;
+    width: 80vw;
     clip-path: inset(0 0 50% 0);
-    z-index: 3;
-    margin: 0% auto;
+    z-index: 1;
+    margin: auto;
 }
-.sierra img{
-    width: 20rem;
+
+.sierra img {
+    width: 100%;
 }
 
 
 #img_hacha {
-    height: 150px;
-    position: relative;
-    margin-top: -90rem;
-    margin-left: 55rem;
+    height: 30vw;
+    position: absolute;
     transform: rotate(25deg);
     z-index: 5;
+    bottom: 10%;
+    right: 10%;
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1000px) {
 
-    .perfil_de_hierro img{
+    .perfil_de_hierro img {
         width: 1000px;
     }
 
-    .cuerpos{
+    .cuerpos {
         padding-top: 3.5rem;
     }
 
-    #img_hacha{
-        display: none;
-    } 
-
-    .gancho{
+    .gancho {
         margin-left: 0.4;
     }
 
-    .gancho img{
+    .gancho img {
         height: 2rem;
     }
 
-    .cuerpos{
+    .cuerpos {
         gap: 2rem;
     }
 
-    #segundo_cuerpo{
+    #segundo_cuerpo {
         display: none;
-    } 
+    }
 
-    .cuerpo_dospartes img{
+    .cuerpo_dospartes img {
         margin-top: -1rem;
         height: 12rem;
     }
 
-    .parte_2_cuerpo{
+    .parte_2_cuerpo {
         margin-left: -3.5rem;
     }
 
-    .seccion_cuerpos_1 img{
+    .seccion_cuerpos_1 img {
         height: 200px;
     }
 
 }
-

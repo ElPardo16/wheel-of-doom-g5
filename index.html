@@ -13,45 +13,44 @@
 <body>
     <div class="game_container">
         <!--Robinson-->
-        <div class="game_container_1">
-            <button id="iniciar_animacion">Iniciar <br> Sacrificio</button>
-            <div class="perfil_de_hierro">
-                <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/barra de acero.png">
+      <div id="anim1" class="game_container_1 animHide">
+         <div class="perfil_de_hierro">
+            <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/barra de acero.png">
+         </div>
+         <div class="cuerpos">
+            <div class="seccion_cuerpos_1">
+               <img id="segundo_cuerpo" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
+               <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
             </div>
-                <div class="cuerpos">
-                <div class="seccion_cuerpos_1">
-                    <img  id="segundo_cuerpo" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
-                    <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
-                </div>
-                    <div class="cuerpo_principal">
-                        <div class="gancho">
-                            <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/gancho.png">
-                        </div>
-                    
-                    <div class="cuerpo_dospartes">
-                        <div class="parte_1_cuerpo">
-                            <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/_2.png">
-                        </div>
-                        <div class="parte_2_cuerpo">
-                            <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/_1.png">
-                        </div>
-                    </div>
-                </div>
-                    <div class="seccion_cuerpos_1">
-                        <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
-                        <img  id="segundo_cuerpo"src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
-                    </div>
-                </div>
-                    <div class="sierra">  
-                        <img  id="sierra_girar" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/sierra.png">
-                    </div>
-                </div>
-                    <img id="img_hacha"src="./src/img/Imagenes_sin_compresion/robinson_imagenes/hacha_1 .png">
-                </div>
-        </div>
-        <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" ></script> 
+            <div class="cuerpo_principal">
+               <div class="gancho">
+                  <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/gancho.png">
+               </div>
+      
+               <div class="cuerpo_dospartes">
+                  <div class="parte_1_cuerpo">
+                     <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/_2.png">
+                  </div>
+                  <div class="parte_2_cuerpo">
+                     <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/_1.png">
+                  </div>
+               </div>
+            </div>
+            <div class="seccion_cuerpos_1">
+               <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
+               <img id="segundo_cuerpo" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
+            </div>
+         </div>
+         <div class="sierra">
+            <img id="sierra_girar" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/sierra.png">
+         </div>
+         <img id="img_hacha" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/hacha_1 .png">
+      </div>
+     
+        
+
         <!--Mardelys-->
-      <div class="container-marde" >
+      <div id="anim2" class="container-marde animHide" >
          <div id="animacion-ruleta">
             <div class="container-ruleta">
                <img src="/src/img/Imagenes_sin_compresion/marde-imagenes/rueda-torturas.png" class="ruleta" alt="">
@@ -66,13 +65,12 @@
             <div class="container-hacha">
                <img src="/src/img/Imagenes_sin_compresion/marde-imagenes/hacha1.png" class="hacha" alt="">
             </div>
-            <button id="play-ruleta" value="false">Play</button>
          </div>
       </div>
          
         <!--Bryan-->
         <!--Angela-->
-        <section class="container-guillotine hide" id="container-guillotine">
+        <section id="anim4" class="container-guillotine">
             <div class="guillotine">
                 <div class="guillotine-blade">
                     <div class="blade">
