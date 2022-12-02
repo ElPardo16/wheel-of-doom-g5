@@ -232,9 +232,9 @@ function soundFX(){
 function playGame(){
     sacrifice(listNamesGame)
     btnPlay.classList.add("disable")
-    guillotina()
 }
 drawArray(listNamesGame)
+guillotina()
 //setTimeout(() => sacrifice(listNamesGame), 2000)
 /* setTimeout(() => sacrifice(listNamesGame), 4000)
 setTimeout(() => sacrifice(listNamesGame), 6000)
