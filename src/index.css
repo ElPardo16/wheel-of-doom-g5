@@ -1,21 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+:root{
+    --bg-c: #300000;
+}
 body{
     background: var(--bg-c);
-    height: 100vh;
     display: grid;
     grid: 50% 40% 10% / 1fr;
     place-items: center;
 }
 .game_container{
+    position: relative;
     background: white;
     place-self: stretch;
+    overflow: hidden;
 }
 .inputs{
+    width: 95%;
     display: grid;
     grid: 40px / 60% 20% 20%;
     padding: 15px 20px;
@@ -35,17 +41,6 @@ body{
     color: var(--bg-c);
     opacity: .6;
 }
-a{
-    display: grid;
-    text-decoration: none;
-    color: white;
-    place-items: center;
-}
-
-:root{
-    --bg-c: #300000;
-}
-
 .inputs a span{
     font-size: 2rem;
 }
@@ -72,25 +67,96 @@ a{
     text-transform: capitalize;
 }
 .info li span{
+    position: relative;
     justify-self: start;
 }
 .info li a > span:last-child{
     font-size: 2rem;
+}
+.dead{
+    opacity: .6;
+}
+.dead::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(./img/imagenes_comprimidas/mancha\ de\ sangre\ .png) no-repeat;
+    background-size: 150% 120%;
+    background-position: 40%;
+    opacity: .8;
+    inset: 0;
+    margin: auto;
+}
+.dead + a{
+    pointer-events: none;
+    opacity: .6;
+}
+.disable{
+    pointer-events: none;
+    opacity: .6;
+}
+@media (min-width: 1000px){
+    body{
+        grid: 85% 15% / 1fr 30%;
+    }
+    .inputs{
+        grid-column: 1 / 3;
+        grid: 40px / 60% 10% 30%;
+        gap: 10px;
+    }
+}
+@media (orientation: landscape) {
+    body{
+        grid: 85% 15% / 1fr 30%;
+    }
+    .inputs{
+        grid-column: 1 / 3;
+        grid: 40px / 60% 10% 30%;
+        gap: 10px;
+    }
 }
 
 .game_container_1 {
     background-image: url("../src/img/Imagenes_sin_compresion/robinson_imagenes/FONDO.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 76%;
-    height: 145%;
+    width: 100%;
+    height: 100%;
     text-align:center;   
 }
 
 .perfil_de_hierro{
-    width: 70%;
     position: absolute;
 }
+
+#iniciar_animacion{
+    position:fixed;
+    margin-top: 30rem;
+    margin-left: -35rem;
+    z-index: 8;
+    background-color: #700000;
+    opacity: .6 ;
+    border:  2px solid #FF0000;
+    border-radius: 10px;
+    font-family: 'Jua', sans-serif;
+    font-size: 35px;
+    color: white;
+    padding: 2rem;
+}
+
+#iniciar_animacion:hover{
+    opacity: 1;
+}
+
+#iniciar_animacion:after{
+    opacity: 0;
+}
+
+
+
+
+
 
 .cuerpos{
     display: flex;
@@ -99,25 +165,6 @@ a{
     justify-content: center;
     position: relative;
     z-index: 3;
-}
-
-
-@media (max-width: 1000px){
-    .game_container_1{
-        width: 90%;
-    }
-
-    .perfil_de_hierro{
-        width: 90%;
-    }
-
-    .perfil_de_hierro img{
-        clip-path: inset(0 74% 0 0);
-    }
-
-    .cuerpos{
-        gap: 2rem;
-    }
 }
 
 .seccion_cuerpos_1{
@@ -155,12 +202,6 @@ a{
     z-index: 4;
 }
 
-@media (max-width: 1000px){
-    #segundo_cuerpo{
-        display: none;
-    } 
-}
-
 .parte_2_cuerpo{
     position: relative;
     margin-left: -7rem;
@@ -168,10 +209,12 @@ a{
 }
 
 .sierra{
-    position: relative;
+    display: flex;
     height: 300px;
+    width: 300px;
     clip-path: inset(0 0 50% 0);
     z-index: 3;
+    margin: 0% auto;
 }
 .sierra img{
     width: 20rem;
@@ -181,15 +224,54 @@ a{
 #img_hacha {
     height: 150px;
     position: relative;
-    margin-top: -20rem;
-    margin-left: 60rem;
+    margin-top: -90rem;
+    margin-left: 55rem;
     transform: rotate(25deg);
     z-index: 5;
 }
 
 @media (max-width: 1000px){
+
+    .perfil_de_hierro img{
+        width: 1000px;
+    }
+
+    .cuerpos{
+        padding-top: 3.5rem;
+    }
+
     #img_hacha{
         display: none;
     } 
+
+    .gancho{
+        margin-left: 0.4;
+    }
+
+    .gancho img{
+        height: 2rem;
+    }
+
+    .cuerpos{
+        gap: 2rem;
+    }
+
+    #segundo_cuerpo{
+        display: none;
+    } 
+
+    .cuerpo_dospartes img{
+        margin-top: -1rem;
+        height: 12rem;
+    }
+
+    .parte_2_cuerpo{
+        margin-left: -3.5rem;
+    }
+
+    .seccion_cuerpos_1 img{
+        height: 200px;
+    }
+
 }
 

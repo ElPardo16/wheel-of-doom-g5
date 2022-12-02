@@ -14,8 +14,23 @@ var saveListNames = [
     }
 ]
 var listNamesGame = [...saveListNames]
+var deads = 0;
+var animationTime = 2000;
 //Robinson
 
+var tl = gsap.timeline();
+const $playAnimation = document.querySelector('#iniciar_animacion');
+
+$playAnimation.addEventListener('click', (e) => {
+   e.preventDefault();
+   document.value = true;
+   for(i = 0;document.value === true;i++) {
+      tl.restart(false,false)
+      return playAnimation();
+   };
+});
+
+function playAnimation(){
 gsap.from('.cuerpos',{
     duration: 2.5, ease: "elastic.out(1, 0.3)", x: 500
 })
@@ -24,7 +39,7 @@ gsap.to("#sierra_girar", { rotation: 1800, duration: 4, ease: "none" });
 
 gsap.to("#img_hacha", {
     x: -240, 
-    y: -200, 
+    y: -350, 
     duration: 1,
     delay: 1,
 });
@@ -54,7 +69,7 @@ gsap.to(".parte_2_cuerpo",{
     delay: 3,
 });
 
-
+};
 //Mardelys
 
 //Bryan
@@ -62,17 +77,35 @@ gsap.to(".parte_2_cuerpo",{
 //Angela
 
 //Andres
+function delay(seconds){
+    seconds = seconds || 2000;
+    return new Promise(done => {
+      setTimeout(() => {
+        done();
+      }, seconds);
+    });
+}
 function drawArray(names){
     lista.innerHTML = ""
-    names.forEach(({name}) => lista.innerHTML += `<li><span>${name}</span><a href="javascript:void(0)" onclick="deleteName(this)"><span class="material-symbols-outlined">delete</span></a></li>`)
+    names.forEach(({name, sacrificado}) => {
+        if(!sacrificado){
+            lista.innerHTML += `<li><span>${name}</span><a href="javascript:void(0)" onclick="deleteName(this)"><span class="material-symbols-outlined">delete</span></a></li>`
+        }else{
+            lista.innerHTML += `<li><span class="dead">${name}</span><a href="javascript:void(0)" onclick="deleteName(this)"><span class="material-symbols-outlined">delete</span></a></li>`
+        }
+    })
 }
 function addName(){
     if (!listNamesGame.some(({name}) => name == inputName.value.toLowerCase())){
-        listNamesGame.push({
-            name: inputName.value.toLowerCase(),
-            sacrificado: false
-        })
-        drawArray(listNamesGame)
+        if(inputName.value != ""){
+            listNamesGame.push({
+                name: inputName.value.toLowerCase(),
+                sacrificado: false
+            })
+            drawArray(listNamesGame)
+        }else{
+            console.log("Vacio")
+        }
     }else{
         console.log("repite")
     }
@@ -82,15 +115,60 @@ function deleteName(element){
     listNamesGame = listNamesGame.filter(({name}) => name != txtName)
     drawArray(listNamesGame)
 }
-function sacrifice(){
-    
+async function sacrifice(victims){
+    let ready = false
+    let indexRandom = Math.floor(Math.random() * listNamesGame.length)
+    while(!ready){
+        if(deads < listNamesGame.length){
+            if(victims[indexRandom].sacrificado){
+                indexRandom = Math.floor(Math.random() * listNamesGame.length)
+            }else{
+                /* ready = true */
+                console.log("1 menos")
+                await delay(1000)
+                // llamar animacion
+                victims[indexRandom].sacrificado = true
+                drawArray(victims)
+                deads++
+            }
+        }else{
+            ready = true
+            //dialogo
+            console.log("se acabaron Game over")
+            await delay(1000)
+            alert("perdio")
+            document.location.href = "game-over.html"
+        }
+        //drawArray(listNamesGame)
+    }
+}
+function animationRandom(){
+    // hacer variable indexAnimation y asignar numero random entre 0 y 3
+    switch(indexAnimation){
+        case 0:
+            //hace algo
+            // cambiar valor de animationTime al tiempo que dura la anim
+            animationTime = 3000
+            break;
+        case 1:
+            //hace algo
+            break;
+        // terminar
+    }
 }
 function restartGame(){
 
 }
 function soundFX(){
-    
+
+}
+function playGame(){
+    sacrifice(listNamesGame)
+    btnPlay.classList.add("disable")
 }
 drawArray(listNamesGame)
-btnAdd.addEventListener("click" , addName)
-
+//setTimeout(() => sacrifice(listNamesGame), 2000)
+/* setTimeout(() => sacrifice(listNamesGame), 4000)
+setTimeout(() => sacrifice(listNamesGame), 6000)
+setTimeout(() => sacrifice(listNamesGame), 12000) */
+//btnAdd.addEventListener("click" , addName)
