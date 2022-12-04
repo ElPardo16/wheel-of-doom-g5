@@ -10,6 +10,12 @@ body {
 .game_container{
   position: relative;
 }
+.container{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
 .saw, .saw-b{
   width: 400px; height: 400px;
   border-radius: 50%;
