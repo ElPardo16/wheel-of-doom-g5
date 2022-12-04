@@ -34,7 +34,7 @@ function playAnimation() {
     /* tl.from('.cuerpos', {
         duration: 2.5, ease: "elastic.out(1, 0.3)", x: 500
     }, 2.5) */
-    tl.to("#sierra_girar", { rotation: 1800, duration: 5, ease: "none" },0);
+    tl.to("#sierra_girar", { rotation: 1800, duration: 5, ease: "none" }, 0);
     tl.to('.cuerpos', {
         duration: 1.2, ease: "elastic.out(1, 0.3)", x: 0
     }, 1.2)
@@ -44,26 +44,26 @@ function playAnimation() {
         y: "-210%",
         delay: 1.5,
         ease: "none",
-    },1);
+    }, 1);
 
     tl.to(".cuerpo_dospartes", {
         ease: "power4.out",
         y: 180,
         delay: .8,
-    },2.5);
+    }, 2.5);
 
     tl.to(".parte_1_cuerpo", {
         rotation: 45,
         duration: 1,
         delay: 2.5,
-    },1);
+    }, 1);
 
     tl.to(".parte_2_cuerpo", {
         rotation: -65,
         duration: .2,
         delay: 2.5,
         display: 'none'
-    },1);
+    }, 1);
 
 };
 //Mardelys
@@ -134,163 +134,156 @@ function playRuleta() {
 };
 
 //Bryan
+function saw() {
+    gsap.config({ trialWarn: false });
 
-gsap.config({trialWarn: false});
+    let mm = gsap.matchMedia();
+    gsap.fromTo('.saw', {
+        //left: 0,
+        rotation: 0,
+    },{
+        rotation: 2000,
+        ease: 'linear',
+        duration: 5,
+    });
+    gsap.fromTo('.saw-b', {
+        rotation: 0,
+        opacity: 0,
+    },{
+        rotation: 2000,
+        ease: 'linear',
+        opacity: 1,
+        delay: 1,
+        duration: 4,
+    });
 
-let mm = gsap.matchMedia();
+    gsap.fromTo('.bodysuit', {
+        y:  0 ,
+        rotation: 0
+    },{
+        ease: 'none',
+        y:  500 ,
+        delay: 1,
+        duration: 2,
+    });
+   
+    gsap.from('.body-right', {
+        rotation: 0,
+    });
+    gsap.to('.body-right', {
+        rotation: 90,
+        delay: 2,
+        duration: 5,
+    });
+    gsap.from('.body-left', {
+        rotation: 0,
+    });
+    gsap.to('.body-left', {
+        rotation: -90,
+        delay: 2,
+        duration: 5,
+    });
 
-mm.add({
-  isMobile: "(max-width: 912px) and (prefers-reduced-motion: no-preference)",
-  isDesktop: "(min-width: 913px) and (prefers-reduced-motion: no-preference)",
-}, (context) => {
-  let {isMobile, isDesktop} = context.conditions;
+    gsap.from('.b1', {
+        scale: 0,
+        duration: 3,
+        delay: 2,
+    })
 
-	gsap.from('.saw', {
-		//left: 0,
-		duration: 5,
-		delay: 2,
-	});
+    gsap.to('.b1', {
+        duration: 3,
+        scale: 1,
+        delay: 2,
+        y:  50 ,
+        x:  150,
+    });
 
-	gsap.to('.saw', {
-	rotation: 360,
-	ease: 'none',
-	repeat: -1,
-	duration: 1,
-	});
+    gsap.from('.b2', {
+        scale: 0,
+        duration: 3,
+        delay: 2,
+    })
 
-	gsap.from('.saw-b', {
-		duration: 5,
-		delay: 6.5,
-		opacity: 0,
-	});
+    gsap.to('.b2', {
+        duration: 3,
+        scale: 1,
+        delay: 2,
+        y:  50 ,
+        x:  -150,
+    });
 
-	gsap.to('.saw-b', {
-		rotation: 360,
-		ease: 'none',
-		repeat: -1,
-		duration: 1,
-	});
+    gsap.from('.b3', {
+        scale: 0,
+        duration: 3,
+        delay: 2,
+    });
 
-	gsap.to('.bodysuit', {
-		ease: 'none',
-		y: isMobile ? 500 : 250,
-		delay: 4,
-		duration: 2,
-	});
+    gsap.to('.b3', {
+        duration: 3,
+        scale: 1,
+        delay: 2,
+        rotation: -30,
+        y: 150,
+    });
 
-	gsap.to('.body-right', {
-		rotation: 90,
-		y: isMobile ? 500 : 500,
-		delay: 6,
-		duration: 8,
-	});
+    gsap.from('.b4', {
+        opacity: 0,
+        scale: 0,
+        duration: 2,
+        delay: 2,
+        y: 100,
+        x: -70,
+    })
 
-	gsap.to('.body-left', {
-		rotation: -90,
-		y: isMobile ? 500 : 400,
-		delay: 6,
-		duration: 8,
-	});
+    gsap.to('.b4', {
+        ease: 'none',
+        delay: 4,
+        duration: 2,
+        opacity: 1,
+    });
 
-	gsap.from('.b1',{
-		scale: 0,
-		duration: 3,
-		delay: 6,
-	})
+    gsap.to('.lung-l', {
+        ease: 'none',
+        x:  -200 ,
+        y:  150,
+        rotation: 245,
+        delay: 4,
+        duration: 5,
+        opacity: 1,
+    });
 
-	gsap.to('.b1', {
-		duration: 3,
-		scale: 1,
-		delay: 6,
-		y: isMobile ? 50 : 250,
-		x: isMobile ? 150 : 390,
-	});
-		
-	gsap.from('.b2',{
-		scale: 0,
-		duration: 3,
-		delay: 6,
-	})
+    gsap.to('.lung-r', {
+        ease: 'none',
+        x: 200 ,
+        y: 150 ,
+        rotation: 255,
+        delay: 4,
+        duration: 5,
+        opacity: 1,
+    });
 
-	gsap.to('.b2', {
-		duration: 3,
-		scale: 1,
-		delay: 6,
-		y: isMobile ? 50 : 250,
-		x: isMobile ? -150 : -370, 
-	});
+    gsap.to('.brain-l', {
+        ease: 'none',
+        x: -100 ,
+        y:  250 ,
+        rotation: 255,
+        delay: 5,
+        duration: 6,
+        opacity: 1,
+    });
 
-	gsap.from('.b3',{
-		scale: 0,
-		duration: 3,
-		delay: 6,
-	});
+    gsap.to('.brain-r', {
+        ease: 'none',
+        x: 100,
+        y:  250 ,
+        rotation: 260,
+        delay: 5,
+        duration: 6,
+        opacity: 1,
+    })
 
-	gsap.to('.b3', {
-		duration: 3,
-		scale: 1,
-		delay: 6,
-		rotation: -30,
-		y: isMobile ? 150 : 400,
-	});
-
-	gsap.from('.b4',{
-		opacity: 0,
-		scale: 0,
-		duration: 2,
-		delay: 6,
-		y:100,
-		x:-70,
-	})
-
-	gsap.to('.b4', {
-		ease: 'none',
-		delay: 6.4,
-		duration: 2,
-		opacity: 1,
-	});
-
-	gsap.to('.lung-l', {
-		ease: 'none',
-		x: isMobile ? -200 : -365,
-		y: isMobile ? 150 : 300,
-		rotation: 245,
-		delay: 6,
-		duration: 6,
-		opacity: 1,
-	});
-
-	gsap.to('.lung-r', {
-		ease: 'none',
-		x: isMobile ? 200 : 350,
-		y: isMobile ? 150 : 350,
-		rotation: 255,
-		delay: 6,
-		duration: 6,
-		opacity: 1,
-	});
-
-	gsap.to('.brain-l', {
-		ease: 'none',
-		x: isMobile ? -100 : -350,
-		y: isMobile ? 250 : -350,
-		rotation: 255,
-		delay: 6.4,
-		duration: 6,
-		opacity: 1,
-	});
-
-	gsap.to('.brain-r', {
-		ease: 'none',
-		x: isMobile ? 100 : 470,
-		y: isMobile ? 250 : 450,
-		rotation: 260,
-		delay: 6.1,
-		duration: 6,
-		opacity: 1,
-	});
-});
-
+   
+}
 
 //Angela
 
@@ -299,50 +292,50 @@ function guillotina() {
     //const guillotine = document.getElementById('container-guillotine')
     //guillotine.classList.replace('hide', 'show')
 
-    let tL = gsap.timeline ({
+    let tL = gsap.timeline({
         repeat: Infinity,
         yoyo: true,
     });
 
-    tL.to('.spectators-shadow',{
+    tL.to('.spectators-shadow', {
         duration: 2,
         y: 25,
     });
 
-        gsap.fromTo('.blade',{
-            y : 0,
-        },{
-            duration:.8,
-            y : 180,
-            ease: Expo.easeIn
-        })
-    
+    gsap.fromTo('.blade', {
+        y: 0,
+    }, {
+        duration: .8,
+        y: 180,
+        ease: Expo.easeIn
+    })
 
-    gsap.fromTo('.head-sacrifice',{
-        y : 0,
-        x : 0,
-    },{
-        duration:.7,
-        y : 105,
-        x : 20,
+
+    gsap.fromTo('.head-sacrifice', {
+        y: 0,
+        x: 0,
+    }, {
+        duration: .7,
+        y: 105,
+        x: 20,
         delay: .5,
         ease: Expo.easeIn
     })
 
     gsap.fromTo('.blade-blood', {
-        opacity:0,
-    },{
-        opacity:1,
-        delay:.7,
-        duration:.3,
+        opacity: 0,
+    }, {
+        opacity: 1,
+        delay: .7,
+        duration: .3,
     })
 
     gsap.fromTo('.sprite', {
-        opacity:0,
-    },{
-        opacity:.8,
-        delay:2,
-        duration:.3,
+        opacity: 0,
+    }, {
+        opacity: .8,
+        delay: 2,
+        duration: .3,
     })
 
     //sprite
@@ -410,6 +403,7 @@ function addName() {
             //console.log("vacio")
             Swal.fire({
                 icon: 'error',
+                heightAuto: false,
                 title: 'Campo vacío',
                 text: 'No es posible sacrificar una persona si no sabemos su nombre',
             })
@@ -418,6 +412,7 @@ function addName() {
         //console.log("repite")
         Swal.fire({
             icon: 'error',
+            heightAuto: false,
             title: 'Nombre repetido',
             text: 'Esta persona ya se encuentra en la lista, ¡prueba con otra!',
         })
@@ -428,21 +423,22 @@ function deleteName(element) {
     listNamesGame = listNamesGame.filter(({ name }) => name != txtName)
     drawArray(listNamesGame)
 }
-async function sacrifice(victims) {
+async function sacrifice() {
     let ready = false
     let indexRandom = Math.floor(Math.random() * listNamesGame.length)
     while (!ready) {
         if (deads < listNamesGame.length) {
-            if (victims[indexRandom].sacrificado) {
+            if (listNamesGame[indexRandom].sacrificado) {
                 indexRandom = Math.floor(Math.random() * listNamesGame.length)
             } else {
                 /* ready = true */
                 //console.log("1 menos")
+                let n = listNamesGame[indexRandom].name
                 Swal.fire({
                     title: 'Proximo Sacrificado...',
                     imageUrl: 'https://i.postimg.cc/bw91g8N3/homero-lista.png',
                     imageHeight: 150,
-                    text: victims[indexRandom].name,
+                    text: listNamesGame[indexRandom].name,
                     confirmButtonColor: "red",
                     confirmButtonText: 'Ok',
                     showConfirmButton: false,
@@ -450,14 +446,16 @@ async function sacrifice(victims) {
                     heightAuto: false,
                     timerProgressBar: true,
                 })
-                await delay(2700)
+                await delay(3000)
                 await animationRandom()
 
-                // llamar animacion
-                victims[indexRandom].sacrificado = true
-                drawArray(victims)
+                listNamesGame.forEach((item) =>{
+                    if(item.name == n){
+                        item.sacrificado = true
+                    }
+                })
+                drawArray(listNamesGame)
                 deads++
-                console.log(deads)
             }
         } else {
             ready = true
@@ -484,11 +482,11 @@ async function sacrifice(victims) {
     //console.log(listNamesGame.length)
 }
 async function animationRandom() {
-    //let indexAnimation = Math.floor(Math.random() * 2)
-    let indexAnimation = 3
-    // hacer variable indexAnimation y asignar numero random entre 0 y 3
+    let indexAnimation = Math.floor(Math.random() * 8)
+    //let indexAnimation = 3
     switch (indexAnimation) {
         case 0:
+        case 4:
             //hace algo
             animationTime = 5000
             anim2.classList.remove("animHide")
@@ -497,6 +495,7 @@ async function animationRandom() {
             anim2.classList.add("animHide")
             break;
         case 1:
+        case 5:
             animationTime = 5000
             anim1.classList.remove("animHide")
             playAnimation()
@@ -504,6 +503,7 @@ async function animationRandom() {
             anim1.classList.add("animHide")
             break;
         case 2:
+        case 6:
             animationTime = 5000
             anim4.classList.remove("animHide")
             guillotina()
@@ -511,9 +511,10 @@ async function animationRandom() {
             anim4.classList.add("animHide")
             break;
         case 3:
-            animationTime = 5000
+        case 7:
+            animationTime = 7000
             anim3.classList.remove("animHide")
-            guillotina()
+            saw()
             await delay(animationTime)
             anim3.classList.add("animHide")
             break;
