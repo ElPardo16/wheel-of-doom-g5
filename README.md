@@ -27,6 +27,12 @@ Slaughter house coders es un juego de sacrificios violentos. Su dinámica result
 > Decidimos usar 2 librerias para esta aplicacion.
 La primera es la libreria de **GREENSOCK/GSAP** la cual nos permite hacer animaciones con estilos de css basicos, esta libreria cuenta con bastantes propiedades para que al momento de animar un frame sea mas sencillo de lo normal, la segunda es **SWEETALERT** la cual nos permite tener alertas dinamicas, mas interactivas con el usuario y personalizables lo cual nos facilita mucho trabajo.
 
+- **Lenguajes**
+> <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="46" height="36" alt="HTML5" /></a>
+<a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="46" height="36" alt="CSS3" /></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="46" height="36" alt="Javascript" /></a>
+
+
 ## Gsap
 [![gsap](https://i.postimg.cc/3xbj872B/84c1e40ea0e759e3f1505eb1788ddf3c-greensock-logo.png "gsap")](https://i.postimg.cc/3xbj872B/84c1e40ea0e759e3f1505eb1788ddf3c-greensock-logo.png "gsap")
 
@@ -105,6 +111,42 @@ Cada método de tortura y/o sacrificio fue definido bajo una función. y cada un
 - > function guillotina()
 - > function playAnimation()
 - > function saw()
+
+## sprite ()
+
+```javascript
+sprite() {
+        let movement = screen.width < 1000 ? 300 : 330;
+        let step = 1
+        const maxStep = 6
+
+        setTimeout(() => {
+            setInterval(() => {
+                const sprite = document.querySelector('.sprite')
+                if (step >= maxStep) {
+                    return
+                }
+                const x = step * movement
+                step = step > maxStep ? 1 : step + 1
+                sprite.style.backgroundPosition = `-${x}px 0px`
+            }, 70)
+            gsap.to('.head-sacrifice', {
+                duration: .8,
+                x: 1000,
+                y: -300,
+                delay: .5,
+                ease: Expo.Out
+            })
+        }, 2000)
+
+    }
+```
+
+Esta función permite ejecutar una animación de una colección de imágenes puestas en una sola. Para ello, se declara una variable que evalúa el tamaño de la pantalla para así asignarle el valor de desplazamiento. De igual modo, se determinó una variable contadora para los pasos de la animación. Se accede al elemento traído del DOM y se evalúa a través del condicional `if` si el contador de pasos ha superado o no su valor límite. En caso de superarlo, terminará la función, de lo contrario se calculará el valor total de desplazamiento de la imagen; todo ello al interior del método setInterval, para asignar un intervalo de tiempo a dicha ejecución.
+
+[![La muerte (sprite)](https://i.postimg.cc/2jHNJFjZ/parca-sprite.png "La muerte (sprite)")](http://https://i.postimg.cc/2jHNJFjZ/parca-sprite.png "La muerte (sprite)")
+
+Una vez ejecutados los 6 pasos que corresponden a las 6 cuadros de imagen, se emplea el método de gsap para animar la cabeza saliendo de escena.
 
 ## delay
 
