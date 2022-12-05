@@ -2,7 +2,7 @@
 <!-- <img alt="Nombre del proyecto" src="https://user-images.githubusercontent.com/50422794/205666670-2fbcd35d-3b76-4ba3-bd37-fc06dbea7189.png"> -->
 <h1 align="left"> Introduccion </h1>
 
-Slaughter house coders es un projecto/juego para dar interaccion al usuario al momento de eliminar jugadores
+Slaughter house coders es un proyecto/juego para dar interaccion al usuario al momento de eliminar jugadores
 
 **Recordatorio**: Esta aplicacion es con fines educativos.
 
