@@ -20,5 +20,6 @@ music.addEventListener('click', _ => {
   }
 })
 vol.addEventListener('change', e => {
-  sounds.volume, lastVolume = e.currentTarget.value / 100;
+  sounds.volume = e.currentTarget.value / 100;
+  lastVolume = sounds.volume
 })
