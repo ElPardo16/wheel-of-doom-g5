@@ -1,19 +1,19 @@
-![Wheel of doom](https://user-images.githubusercontent.com/50422794/205666417-cf36dec1-6b59-4ba9-be93-d3899380432a.jpg)
-<!-- <img alt="Nombre del proyecto" src="https://user-images.githubusercontent.com/50422794/205666670-2fbcd35d-3b76-4ba3-bd37-fc06dbea7189.png"> -->
-<h1 align="left"> Introduccion </h1>
+# SLAUGHTER HOUSE CODERS
 
-Slaughter house coders es un proyecto/juego para dar interaccion al usuario al momento de eliminar jugadores
+[![Slaughter house coders](https://i.postimg.cc/ht8McNpZ/slaughter.png "Slaughter house coders")](http://https://i.postimg.cc/ht8McNpZ/slaughter.png "Slaughter house coders")
 
-**Recordatorio**: Esta aplicacion es con fines educativos.
+Slaughter house coders es un juego de sacrificios violentos. Su dinámica resulta básica e intuitiva para los usuarios, en donde estos son quiénes deciden a través de una lista de nombres las personas a las cuales quieren eliminar; una vez desee iniciar el juego, este automáticamente y de manera aleatoria determinará el orden de los sacirficios y el método de tortura para cada uno de ellos.
+
+**Recordatorio**: Esta aplicación es con fines educativos.
 
 - **Fácil de jugar**
 
-> Para este juego se logro crear un entorno para facilitar la usabilidad al usuario, es bastante intuitivo al momento de jugarlo, simplemente se tienen que poner los nombres de la victima a la cual se quiere ejecutar y el juego realizara todo el trabajo sucio por ti.
+> Para este juego se logró crear un entorno para facilitar la usabilidad al usuario, es bastante intuitiva al momento de jugarlo, simplemente se tienen que poner los nombres de la víctima a la cual se quiere ejecutar y el juego realizará todo el trabajo sucio por ti.
 
 - **Propósito**
 
-> Desarrollar una aplicación web para un nuevo evento de sacrifico de coders, la aplicación debe ser un sistema de sacrificios justo y aleatorio, en la que se hará el sorteo de una lista de nombres
+> Desarrollar una aplicación web para un nuevo evento de sacrificio de coders, la aplicación debe ser un sistema de sacrificios justo y aleatorio, en la que se hará el sorteo de una lista de nombres.
 
 - **Adaptacion**
 
-> La aplicacion tendra una adaptacion tanto para computador de escritorio, celulares y tablets,
+> La aplicación tendra una adaptación tanto para computador de escritorio, celulares y tablets.
