@@ -94,17 +94,17 @@ Swal.fire({
 
 En cuanto a estas alertas personalizadas, cada una de ellas sigue una estructura base, la cual contiene un título, imagen, texto (En este caso, trae el nombre de la persona a sacrificar del arreglo `listNamesGame`), botón y una barra que de tiempo, la cual muestra el progreso en tiempo de duración de dicha alerta, en caso de no dar click en el botón.
 
+
+<h1 align="center" >Funcionalidad</h1>
+
 ## Animaciones (funciones)
 
 Cada método de tortura y/o sacrificio fue definido bajo una función. y cada una de ellas está compuesta por los métodos propio de gsap (anteriormente mencionados), los cuales dan vida a cada una de las animaciones que conforman un sacrificio.
 
-> function playRuleta()
-> function guillotina()
-> function playAnimation()
-> function saw()
-
-
-<h1 align="center" >Funcionalidad</h1>
+- > function playRuleta()
+- > function guillotina()
+- > function playAnimation()
+- > function saw()
 
 <h2>deleteName()</h2>
 
