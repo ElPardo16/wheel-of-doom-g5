@@ -4,18 +4,131 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/styles.css">
+    <link rel="stylesheet" type="text/css" href="./src/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>Juego</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    <link rel="stylesheet" href="./src/index.css">
+    <title>Menu</title>
 </head>
-<body class="bg">
-      <img class="title" src="./src/img/imagenes_comprimidas/titulo png.png" alt="" srcset="">
-      <input class="vol" value="70" type="range" name="vol" id="vol">
-     <a class="float m" href="javascript:void(0)" id="music"><span class="material-symbols-outlined">volume_up</span> </a>
-      <div class="container">
-          <a href="./index.html" class="btn r">Jugar</a>
-          <a href="javascript:close()" class="btn b">Salir</a>
-  </div>
-  <script src="./src/sounds.js"></script>
+<body>
+    <div class="game_container">
+        <!--Robinson-->
+      <div id="anim1" class="game_container_1 animHide">
+         <div class="perfil_de_hierro">
+            <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/barra de acero.png">
+         </div>
+         <div class="cuerpos">
+            <div class="seccion_cuerpos_1">
+               <img id="segundo_cuerpo" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
+               <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
+            </div>
+            <div class="cuerpo_principal">
+               <div class="gancho">
+                  <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/gancho.png">
+               </div>
+      
+               <div class="cuerpo_dospartes">
+                  <div class="parte_1_cuerpo">
+                     <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/_2.png">
+                  </div>
+                  <div class="parte_2_cuerpo">
+                     <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/_1.png">
+                  </div>
+               </div>
+            </div>
+            <div class="seccion_cuerpos_1">
+               <img src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
+               <img id="segundo_cuerpo" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/cuerpo1_unido.png" alt="">
+            </div>
+         </div>
+         <div class="sierra">
+            <img id="sierra_girar" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/sierra.png">
+         </div>
+         <img id="img_hacha" src="./src/img/Imagenes_sin_compresion/robinson_imagenes/hacha_1 .png">
+      </div>
+        <!--Mardelys-->
+      <div id="anim2" class="container-marde animHide" >
+         <div id="animacion-ruleta">
+            <div class="container-ruleta">
+               <img src="/src/img/Imagenes_sin_compresion/marde-imagenes/rueda-torturas.png" class="ruleta" alt="">
+            </div>
+            <div class="container-cuerpo">
+               <img src="/src/img/Imagenes_sin_compresion/marde-imagenes/sangre.png" class="sangre-ruleta" alt="">
+               <img src="/src/img/Imagenes_sin_compresion/marde-imagenes/cuerpo (copia).png" class="cuerpo-ruleta"alt="">
+               <img src="/src/img/Imagenes_sin_compresion/marde-imagenes/cuerpo1.png" class="cuerpo-ruleta2" alt="">
+               <img src="/src/img/Imagenes_sin_compresion/marde-imagenes/cuerpo2.png" class="cuerpo-ruleta1" alt="">
+               
+            </div>
+            <div class="container-hacha">
+               <img src="/src/img/Imagenes_sin_compresion/marde-imagenes/hacha1.png" class="hacha" alt="">
+            </div>
+         </div>
+      </div>
+        <!--Bryan-->
+        <div id="anim3" class="containerB animHide">
+            <div class="bodys">
+                <img class="bodysuit body-left" src="./src/img/body-left.png">
+                <img class="bodysuit body-right" src="./src/img/body-right.png">
+            </div>
+            <div class="brains">
+                <img class="brain brain-l" src="./src/img/brain-l.png">
+                <img class="brain brain-r" src="./src/img/brain-r.png">
+            </div> 
+            <div class="saws">
+                <img class="saw" src="src/img/saw.png">
+                <img class="saw-b" src="src/img/saw-blood.png">
+            </div>
+            <div class="bloods">
+                <img class="blood b1" src="./src/img/blood.png">
+                <img class="blood b2" src="./src/img/blood.png">
+                <img class="b3" src="./src/img/blood1.png">
+                <img class="b4" src="./src/img/blood4.png">
+            </div>
+            <div class="lungs">
+                <img class="lung-l" src="./src/img/lung-left.png">
+                <img class="lung-r" src="./src/img/lung-right.png"> 
+            </div>
+            <div class="cont-table">
+                <img class="table" src="./src/img/table-top.png">
+                <img class="table" src="./src/img/table-down.png">
+            </div>
+        </div>
+        <!--Angela-->
+        <section id="anim4" class="container-guillotine animHide">
+            <div class="guillotine">
+                <div class="guillotine-blade">
+                    <div class="blade">
+                        <img src="src/img/imagenes_guillotina/cuchilla guillotina.png" alt="Cuchilla de la guillotina">
+                        <img src="src/img/imagenes_guillotina/blood.png" alt="sangre" class="blade-blood">
+                    </div>
+                    <img src="src/img/imagenes_guillotina/cabeza sacrificio.png" alt="Cabeza de sacrificio" class="head-sacrifice">
+                </div>
+                <div class="sprite"></div>
+            </div>
+            <div class="container-hands">
+                <img src="src/img/imagenes_guillotina/manos gente enojada.png" alt="Espectadores" class="spectators-shadow">
+            </div>
+        </section>
+        <!--Andres-->
+        
+           <a class="float s" href="javascript:void(0)" id="restart"><span class="material-symbols-outlined">sync</span></a>
+           <input class="vol" value="70" type="range" name="vol" id="vol">
+           <a class="float m" href="javascript:void(0)" id="music"><span class="material-symbols-outlined">volume_up</span></a>
+        
+    </div>
+    <ul id="info" class="info">
+        
+    </div>
+    </ul>
+    <form class="inputs" action="">
+        <input type="text" id="name" placeholder="Nombre victima">
+        <a href="javascript:void(0)" onclick="addName()" id="add"><span class="material-symbols-outlined">add</span></a>
+        <a href="javascript:void(0)" onclick="playGame()" id="play"><span class="material-symbols-outlined">play_arrow</span></a>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="./src/index.js"></script>
+    <script src="./src/sounds.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

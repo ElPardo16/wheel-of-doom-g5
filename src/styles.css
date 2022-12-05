@@ -7,6 +7,8 @@
     background: url(./img/imagenes_comprimidas/fondo.jpg) no-repeat;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
+    max-width:100vw;
 }
 body{
     position: relative;
@@ -38,6 +40,7 @@ body{
     margin: auto;
     max-width: 400px;
     margin-top: 10vh;
+    z-index: 30;
 }
 .go .title{
     margin-top: 20vh;
@@ -107,6 +110,7 @@ a{
     inset: 0;
     margin: auto;
     margin-bottom: 10vh;
+    z-index: 30;
 }
 .btn{
     width: 80%;
