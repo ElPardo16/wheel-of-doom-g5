@@ -3,6 +3,8 @@ var lista = document.getElementById("info")
 var inputName = document.getElementById("name")
 var btnAdd = document.getElementById("add")
 var btnPlay = document.getElementById("play")
+var ready = false
+var lastIndexAnim = 0
 var saveListNames = [
     {
         name: "profe juliana",
@@ -424,7 +426,6 @@ function deleteName(element) {
     drawArray(listNamesGame)
 }
 async function sacrifice() {
-    let ready = false
     let indexRandom = Math.floor(Math.random() * listNamesGame.length)
     while (!ready) {
         if (deads < listNamesGame.length) {
@@ -448,14 +449,17 @@ async function sacrifice() {
                 })
                 await delay(3000)
                 await animationRandom()
-
-                listNamesGame.forEach((item) =>{
-                    if(item.name == n){
-                        item.sacrificado = true
-                    }
-                })
-                drawArray(listNamesGame)
-                deads++
+                if(!ready){
+                    listNamesGame.forEach((item) =>{
+                        if(item.name == n){
+                            item.sacrificado = true
+                        }
+                    })
+                    drawArray(listNamesGame)
+                    deads++
+                }else{
+                    break
+                }
             }
         } else {
             ready = true
@@ -473,7 +477,7 @@ async function sacrifice() {
                 heightAuto: false,
                 timerProgressBar: true
             })
-            //await delay(4000)
+            await delay(4100)
             //alert("perdio")
             document.location.href = "game-over.html"
         }
@@ -484,9 +488,16 @@ async function sacrifice() {
 async function animationRandom() {
     let indexAnimation = Math.floor(Math.random() * 8)
     //let indexAnimation = 0
+    while(true){
+        if(lastIndexAnim == indexAnimation){
+            indexAnimation = Math.floor(Math.random() * 8)
+        }else{
+            break
+        }
+    }
     switch (indexAnimation) {
         case 0:
-        case 4:
+        case 5:
             //hace algo
             animationTime = 5000
             anim2.classList.remove("animHide")
@@ -496,7 +507,7 @@ async function animationRandom() {
             anim2.classList.add("animHide")
             break;
         case 1:
-        case 5:
+        case 6:
             animationTime = 5000
             anim1.classList.remove("animHide")
             tl.restart(false, false)
@@ -505,7 +516,7 @@ async function animationRandom() {
             anim1.classList.add("animHide")
             break;
         case 2:
-        case 6:
+        case 4:
             animationTime = 5000
             anim4.classList.remove("animHide")
             guillotina()
@@ -522,18 +533,42 @@ async function animationRandom() {
             break;
         // terminar
     }
+    lastIndexAnim = indexAnimation
 }
 function restartGame() {
-
-}
-function soundFX() {
-
+    ready = true
+    deads = 0
+    Swal.fire({
+        title: 'Reseteando...',
+        imageUrl: 'https://i.postimg.cc/wjMg3jNN/homero-parca.png',
+        imageHeight: 150,
+        confirmButtonColor: "red",
+        confirmButtonText: 'Ok',
+        showConfirmButton: false,
+        timer: 5000,
+        heightAuto: false,
+        timerProgressBar: true
+    })
+    anim1.classList.add("animHide")
+    anim2.classList.add("animHide")
+    anim3.classList.add("animHide")
+    anim4.classList.add("animHide")
+    delay(5000)
+    listNamesGame.forEach(item => {
+        item.sacrificado = false
+    })
+    drawArray(listNamesGame)
+    btnPlay.classList.remove("disable")
 }
 function playGame() {
+    ready = false
     sacrifice(listNamesGame)
     btnPlay.classList.add("disable")
 }
 drawArray(listNamesGame)
+restart.addEventListener('click', _ => {
+    restartGame()
+})
 //guillotina()
 //setTimeout(() => sacrifice(listNamesGame), 2000)
 /* setTimeout(() => sacrifice(listNamesGame), 4000)
