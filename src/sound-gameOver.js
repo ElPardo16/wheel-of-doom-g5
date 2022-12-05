@@ -1,9 +1,9 @@
 let sounds = new Audio('./src/sounds/game-over-sonido.mp3');
 var mute = false
-var lastVolume = .7
+var lastVolume = .5
 
 window.addEventListener("load", _ => {
-  sounds.volume = .7
+  sounds.volume = .5
   sounds.play()
 })
 music.addEventListener('click', _ => {

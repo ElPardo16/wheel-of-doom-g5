@@ -1,10 +1,10 @@
 let sounds = new Audio('./src/sounds/fondo 1 .mp3');
 var mute = false
-var lastVolume = .7
+var lastVolume = .5
 
 window.onload = function startSound(){
   sounds.loop = true
-  sounds.volume = .7
+  sounds.volume = .5
   sounds.play();
 }
 music.addEventListener('click', _ => {

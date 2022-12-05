@@ -244,42 +244,62 @@ function saw() {
         opacity: 1,
     });
 
-    gsap.to('.lung-l', {
+    gsap.fromTo('.lung-l',{
+        x:  0 ,
+        y:  0,
+        rotation: 0,
+        opacity: 0,
+    }, {
         ease: 'none',
         x:  -200 ,
         y:  150,
         rotation: 245,
-        delay: 4,
+        delay: 3,
         duration: 5,
         opacity: 1,
     });
 
-    gsap.to('.lung-r', {
+    gsap.fromTo('.lung-r', {
+        x:  0 ,
+        y:  0,
+        rotation: 0,
+        opacity: 0,
+    },{
         ease: 'none',
         x: 200 ,
         y: 150 ,
         rotation: 255,
-        delay: 4,
+        delay: 3,
         duration: 5,
         opacity: 1,
     });
 
-    gsap.to('.brain-l', {
+    gsap.fromTo('.brain-l', {
+        x:  0 ,
+        y:  0,
+        rotation: 0,
+        opacity: 0,
+    }, {
         ease: 'none',
         x: -100 ,
         y:  250 ,
         rotation: 255,
-        delay: 5,
+        delay: 3,
         duration: 6,
         opacity: 1,
     });
 
-    gsap.to('.brain-r', {
+    gsap.fromTo('.brain-r',{
+        x:  0 ,
+        y:  0,
+        rotation: 0,
+        opacity: 0,
+    }, {
         ease: 'none',
         x: 100,
         y:  250 ,
         rotation: 260,
-        delay: 5,
+        delay: 3,
         duration: 6,
         opacity: 1,
     })
@@ -432,8 +452,6 @@ async function sacrifice() {
             if (listNamesGame[indexRandom].sacrificado) {
                 indexRandom = Math.floor(Math.random() * listNamesGame.length)
             } else {
-                /* ready = true */
-                //console.log("1 menos")
                 let n = listNamesGame[indexRandom].name
                 Swal.fire({
                     title: 'Proximo Sacrificado...',
@@ -463,8 +481,6 @@ async function sacrifice() {
             }
         } else {
             ready = true
-            //dialogo
-            //console.log("se acabaron Game over")
             Swal.fire({
                 title: 'Juego terminado',
                 imageUrl: 'https://i.postimg.cc/wjMg3jNN/homero-parca.png',
@@ -478,27 +494,22 @@ async function sacrifice() {
                 timerProgressBar: true
             })
             await delay(4100)
-            //alert("perdio")
             document.location.href = "game-over.html"
         }
-        //drawArray(listNamesGame)
     }
-    //console.log(listNamesGame.length)
 }
 async function animationRandom() {
-    let indexAnimation = Math.floor(Math.random() * 8)
+    let indexAnimation = Math.floor(Math.random() * 4)
     //let indexAnimation = 0
     while(true){
         if(lastIndexAnim == indexAnimation){
-            indexAnimation = Math.floor(Math.random() * 8)
+            indexAnimation = Math.floor(Math.random() * 4)
         }else{
             break
         }
     }
     switch (indexAnimation) {
         case 0:
-        case 5:
-            //hace algo
             animationTime = 5000
             anim2.classList.remove("animHide")
             tl.restart(false, false)
@@ -507,7 +518,6 @@ async function animationRandom() {
             anim2.classList.add("animHide")
             break;
         case 1:
-        case 6:
             animationTime = 5000
             anim1.classList.remove("animHide")
             tl.restart(false, false)
@@ -516,7 +526,6 @@ async function animationRandom() {
             anim1.classList.add("animHide")
             break;
         case 2:
-        case 4:
             animationTime = 5000
             anim4.classList.remove("animHide")
             guillotina()
@@ -524,14 +533,12 @@ async function animationRandom() {
             anim4.classList.add("animHide")
             break;
         case 3:
-        case 7:
             animationTime = 7000
             anim3.classList.remove("animHide")
             saw()
             await delay(animationTime)
             anim3.classList.add("animHide")
             break;
-        // terminar
     }
     lastIndexAnim = indexAnimation
 }
@@ -558,10 +565,12 @@ function restartGame() {
         item.sacrificado = false
     })
     drawArray(listNamesGame)
+    gcTitle.classList.remove("h")
     btnPlay.classList.remove("disable")
 }
 function playGame() {
     ready = false
+    gcTitle.classList.add("h")
     sacrifice(listNamesGame)
     btnPlay.classList.add("disable")
 }
