@@ -134,6 +134,8 @@ function drawArray(names) {
     })
 }
 ```
+Esta función pretende agregar al DOM, más especificamente a la lista de nombres, aquellos datos ingresados por el usuario. Recibe como parámetro esta misma lista, en la cual entra a recorrer mediante el método `forEach` el nombre de cada uno en la lista y el estado asociado `sacrificado`, si corresponde a true o false.
+La estructura de control doble `if/else`, establece como condición que si el valor de `sacrificado` es diferente de su estado inicial, agregará al DOM a través del método innerHTML, el nombre ingresado por el usuario junto con unos elementos por defecto para la eliminación del mismo, de lo contrario, es decir, si la persona ya fue sacrificada, se agregará el elemento de igual manera, la diferencia es que le atañe una clase para crear el efecto de tachado con sangre en la lista.
 
 <h2>deleteName()</h2>
 
