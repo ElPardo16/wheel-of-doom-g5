@@ -49,6 +49,7 @@ body{
     height: 60px;
     background: rgba(0,0,0, .6);
     border-radius: 10px;
+    z-index: 30;
 }
 .img-con{
     position: absolute;
@@ -124,23 +125,17 @@ a{
     background:rgba(0,0,0, .6);
     border: solid 2px rgb(0,0,0);
 }
-@media (min-width: 1000px) {
-    .title{
-        margin-top: 20px;
-    }
-    .container{
-        margin-bottom: 50px;
-    }
-    .float{
-        top: 2vw
-    }
-    .m{
-        right: 2vw;
-    }
-    .s{
-       
-        left: 2vw;
-    }
+.vol{
+    position: absolute;
+    width: 30vw;
+    height: 60px;
+    top: 40vw;
+    right: -15px;
+    z-index: 30;
+    transform: rotate(-90deg);
+}
+.h{
+    display: none;
 }
 @media (min-height: 900px) {
     .title{
@@ -165,5 +160,34 @@ a{
     }
     .float span{
         font-size: 1.6rem;
+    }
+    .vol{
+        width: 20vh;
+        height: 40px;
+        top: 10vw;
+        right: -5px;
+    }
+}
+@media (min-width: 1000px) {
+    .title{
+        margin-top: 20px;
+    }
+    .container{
+        margin-bottom: 50px;
+    }
+    .float{
+        top: 2vw
+    }
+    .m{
+        right: 2vw;
+    }
+    .s{
+       
+        left: 2vw;
+    }
+    .vol{
+        width: 10vh;
+        top: 10vw;
+        right: 10px;
     }
 }

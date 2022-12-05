@@ -475,7 +475,7 @@ async function sacrifice() {
             })
             //await delay(4000)
             //alert("perdio")
-            //document.location.href = "game-over.html"
+            document.location.href = "game-over.html"
         }
         //drawArray(listNamesGame)
     }
@@ -483,13 +483,14 @@ async function sacrifice() {
 }
 async function animationRandom() {
     let indexAnimation = Math.floor(Math.random() * 8)
-    //let indexAnimation = 3
+    //let indexAnimation = 0
     switch (indexAnimation) {
         case 0:
         case 4:
             //hace algo
             animationTime = 5000
             anim2.classList.remove("animHide")
+            tl.restart(false, false)
             playRuleta()
             await delay(animationTime)
             anim2.classList.add("animHide")
@@ -498,6 +499,7 @@ async function animationRandom() {
         case 5:
             animationTime = 5000
             anim1.classList.remove("animHide")
+            tl.restart(false, false)
             playAnimation()
             await delay(animationTime)
             anim1.classList.add("animHide")
@@ -520,7 +522,6 @@ async function animationRandom() {
             break;
         // terminar
     }
-    tl.restart(false, false)
 }
 function restartGame() {
 
